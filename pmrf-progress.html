@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PMRF Progress — Hrishikesh Singh</title>
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="nav-inner">
+    <div class="site-title"><a href="index.html">Hrishikesh Singh</a></div>
+    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <nav class="main-nav">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="research.html">Research</a></li>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="conferences.html">Conferences</a></li>
+        <li><a href="workshops.html">Workshops and Training</a></li>
+        <li><a href="academic-journey.html">Academic Journey</a></li>
+        <li><a href="pmrf-progress.html" class="active">PMRF Progress</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<div class="hero page-hero"><h1>PMRF Progress</h1></div>
+
+<main>
+
+  <section>
+    <p class="meta-line"><strong>PMRF Yearly Progress Report: May 2026</strong> &middot; PMRF Research Scholar, Fellowship Cycle 11</p>
+    <p class="meta-line"><strong>Ph.D. Supervisor:</strong> Prof. Mohit Prakash Mohanty, Department of Water Resources Development and Management, IIT Roorkee</p>
+  </section>
+
+  <section>
+    <h2>Research challenge</h2>
+    <p>India is the second most flood-affected nation in the world, yet still lacks a consolidated, high-resolution national database of flood inundation, hazard and risk. Large parts of India's flood-prone domain, particularly the Himalayan, Northern, Eastern and North-eastern states, remain ungauged or sparsely gauged, making conventional numerical flood modelling untenable at the national scale. This doctoral research addresses that gap by developing an integrated, high-resolution flood-risk framework for India that leverages reanalysis-based hydro-meteorological inputs and physics-based hydrodynamic modelling to quantify risk at fine administrative scale, jointly capturing hazard, socio-economic-cum-physical vulnerability, and exposure.</p>
+  </section>
+
+  <section>
+    <h2>Thesis overview</h2>
+    <p>Flood risk is quantified jointly at the basin scale and the city scale. At the basin scale, risk is the interaction between a nationwide depth-based hydrodynamic flood hazard (LISFLOOD-FP, forced by multi-day design rainfall and discharge) and a district-level socio-economic-cum-physical vulnerability index built from 54 indicators using a Shannon Entropy-TOPSIS scheme. At the city scale, risk is the interaction between a momentum-based urban flood hazard (from city-specific copula-conditioned design forcings) and population-cum-GDP exposure at fine grid resolution.</p>
+  </section>
+
+  <section>
+    <h2>Progress summary (May 2025 – April 2026)</h2>
+    <ul>
+      <li>Hydro-meteorological dataset evaluation: <strong>Completed.</strong> Published as first-author paper in <em>International Journal of Applied Earth Observation and Geoinformation</em>.</li>
+      <li>Nationwide depth-based flood hazard modelling: <strong>Completed.</strong> LISFLOOD-FP model completed across all 25 CWC basins at 100 m resolution. July-2023 validation: Hit Rate 0.81, False Alarm Ratio 0.41, Error Bias 2.06.</li>
+      <li>Multi-day flood and composite basin-scale flood risk: <strong>Completed.</strong> Depth-based hazard and district vulnerability layers coupled into a national flood-risk surface.</li>
+      <li>District-level socio-economic-cum-physical vulnerability: <strong>Completed.</strong> 54-indicator vulnerability index completed for Indian districts; methodology published as a Springer book chapter.</li>
+      <li>City-scale flood risk and TRIC: <strong>Completed.</strong> TRIC completed for 100 Smart Cities; manuscript under peer review (see <a href="publications.html">Publications</a>).</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>TRIC: the Tier-based Risk Index for Cities</h2>
+    <p>TRIC derives city-specific compound flood forcings rather than assuming uniform national design events. Bivariate Archimedean copulas are used for pluvial-only cities (using Rx1day and N25), while a trivariate Gumbel-Hougaard copula is used for 51 river-influenced cities by additionally coupling annual-maximum discharge. The resulting joint-severity design events are translated into design hydrographs and design rainfall hyetographs, then simulated with a momentum-based hazard rating (Haz = h(Vc + 1.5)) using the GPU build of LISFLOOD-FP, integrated with WorldPop population and downscaled GDP-PPP exposure.</p>
+    <p>Across the 100-city network, 10.35 million people (7.64%) and US$147.48 billion in GDP (9.03%) fall within High or Very-High hazard zones. Six Tier-5 cities — Surat, Ahmedabad, Chinchwad, Visakhapatnam, Kalyan and Guwahati — and 27 Tier-4 cities form the national priority set.</p>
+  </section>
+
+  <section>
+    <h2>Scientific output during the current review period (May 2025 – April 2026)</h2>
+    <table class="data-table">
+      <tbody>
+        <tr><th>Publications from the PhD</th><td>2 first-author journal papers published (<em>Water Resources Management</em>; <em>International Journal of Applied Earth Observation and Geoinformation</em>); 1 first-author manuscript under review; 1 first-author manuscript in advanced preparation (target: <em>Geophysical Research Letters</em>).</td></tr>
+        <tr><th>Publications outside the PhD</th><td>1 co-authored paper published (<em>Science of The Total Environment</em> — SWAT+ framework); 1 co-authored paper published (<em>Natural Hazards</em> — Western Himalayas multi-hazard episodes, lead author Rahul Deopa); 1 co-authored manuscript under review (<em>Physics and Chemistry of the Earth</em> — Nepal GLOF hazard mapping).</td></tr>
+        <tr><th>Book chapter</th><td>1 published (<em>Progress in Multicriteria Decision Making Models</em>, Springer).</td></tr>
+        <tr><th>Conferences</th><td>EGU General Assembly 2026 (poster, first author); EGU General Assembly 2026 (oral, co-author); IAHS Scientific Assembly 2025 (on-site, first author).</td></tr>
+      </tbody>
+    </table>
+  </section>
+
+  <section>
+    <h2>Current work and next steps</h2>
+    <ul>
+      <li>Finalising the multiday storm-response manuscript for submission to <em>Geophysical Research Letters</em></li>
+      <li>Responding to peer review on the TRIC submission</li>
+      <li>Integrating basin-scale and city-scale outputs into a unified national flood-risk database</li>
+    </ul>
+    <p class="meta-line">Note: manuscript and peer-review statuses above reflect the May 2026 PMRF progress report and will be updated as review outcomes are received. Page last updated: July 2026.</p>
+  </section>
+
+</main>
+
+<footer class="site-footer">
+  <p>This is a personal academic website maintained by Hrishikesh Singh. It is not the official website of IIT Roorkee or the Prime Minister's Research Fellows scheme.</p>
+</footer>
+
+<script src="js/main.js"></script>
+</body>
+</html>
