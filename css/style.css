@@ -474,7 +474,7 @@ body.home-page .nav-toggle {
   min-height: 480px;
   display: flex;
   align-items: center;
-  background: linear-gradient(115deg, rgba(10,22,36,0.82) 0%, rgba(10,22,36,0.45) 55%, rgba(10,22,36,0.2) 100%), var(--navy-dark);
+  background: linear-gradient(90deg, rgba(6,14,24,0.92) 0%, rgba(6,14,24,0.75) 30%, rgba(6,14,24,0.35) 55%, rgba(6,14,24,0.05) 75%, rgba(6,14,24,0) 90%), var(--navy-dark);
   background-size: cover;
   background-position: center;
 }
@@ -539,10 +539,18 @@ body.home-page .nav-toggle {
   display: grid;
   grid-template-columns: 300px 1fr;
   gap: 2.5rem;
-  align-items: start;
+  align-items: stretch;
+}
+.about-portrait {
+  height: 100%;
+  min-height: 320px;
 }
 .about-portrait img {
   width: 100%;
+  height: 100%;
+  min-height: 320px;
+  object-fit: cover;
+  object-position: center 22%;
   border-radius: 12px;
   box-shadow: 0 6px 18px rgba(20,41,63,0.18);
   display: block;
@@ -634,12 +642,22 @@ body.home-page .nav-toggle {
   grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
   gap: 1.6rem;
 }
-.featured-card {
+a.featured-card {
+  display: block;
   border: 1px solid var(--border);
   border-radius: 10px;
   overflow: hidden;
   background: #fff;
   box-shadow: 0 2px 10px rgba(20,41,63,0.06);
+  color: inherit;
+  text-decoration: none !important;
+  transition: transform 0.18s ease, box-shadow 0.18s ease;
+}
+a.featured-card:hover,
+a.featured-card:focus-visible {
+  transform: translateY(-4px);
+  box-shadow: 0 10px 24px rgba(20,41,63,0.16);
+  border-color: var(--sky);
 }
 .featured-img {
   position: relative;
@@ -657,11 +675,41 @@ body.home-page .nav-toggle {
   padding: 1rem;
   background: linear-gradient(135deg, var(--sky-light), #dce9f7);
 }
-.featured-body { padding: 1.1rem 1.3rem 1.3rem; }
-.featured-body h3 { font-size: 1.05rem; margin: 0 0 0.4rem; }
-.featured-body p { font-family: Arial, sans-serif; font-size: 0.9rem; color: var(--text-muted); margin: 0 0 0.8rem; }
-.featured-body a.read-more { font-family: Arial, sans-serif; font-size: 0.85rem; font-weight: 600; color: var(--sky); text-decoration: none; }
-.featured-body a.read-more:hover { text-decoration: underline; }
+.featured-icon {
+  position: absolute;
+  left: 0.9rem;
+  bottom: -1.1rem;
+  width: 2.4rem;
+  height: 2.4rem;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0 3px 8px rgba(20,41,63,0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--sky);
+}
+.featured-icon svg { width: 1.2rem; height: 1.2rem; }
+.featured-body { padding: 1.6rem 1.3rem 1.3rem; }
+a.featured-card .featured-body h3 { font-size: 1.05rem; margin: 0 0 0.4rem; color: var(--navy); }
+a.featured-card:hover .featured-body h3 { color: var(--sky); }
+.featured-body p { font-family: Arial, sans-serif; font-size: 0.9rem; color: var(--text-muted); margin: 0; }
+.featured-more {
+  text-align: center;
+  margin-top: 2rem;
+}
+.featured-more a {
+  display: inline-block;
+  font-family: Arial, sans-serif;
+  font-size: 0.9rem;
+  font-weight: 600;
+  color: var(--sky-dark);
+  background: var(--sky-light);
+  padding: 0.6rem 1.4rem;
+  border-radius: 6px;
+  text-decoration: none !important;
+}
+.featured-more a:hover { background: #d9e9f9; }
 
 /* Dark footer (home page) */
 body.home-page footer.site-footer {
@@ -687,20 +735,25 @@ body.home-page footer.site-footer {
 }
 .footer-social {
   display: flex;
-  gap: 1rem;
+  gap: 0.7rem;
   align-items: center;
 }
 .footer-social a {
-  color: #cfd9e2;
+  color: #fff;
+  background: rgba(255,255,255,0.08);
+  border: 1px solid rgba(255,255,255,0.18);
   font-family: Arial, sans-serif;
-  font-size: 0.85rem;
+  font-size: 0.82rem;
+  font-weight: 600;
   display: inline-flex;
   align-items: center;
-  gap: 0.35rem;
-  text-decoration: none;
+  gap: 0.45rem;
+  padding: 0.45rem 0.9rem;
+  border-radius: 6px;
+  text-decoration: none !important;
 }
-.footer-social a:hover { color: #fff; }
-.footer-social .divider { color: #48607a; }
+.footer-social a svg { width: 1rem; height: 1rem; fill: #fff; flex: 0 0 auto; }
+.footer-social a:hover { background: rgba(255,255,255,0.18); }
 body.home-page .footer-disclaimer {
   border-top: 1px solid #2a3f56;
   margin: 0;
