@@ -438,32 +438,32 @@ footer.site-footer p {
 }
 
 /* ==========================================================================
-   Home page redesign (scoped to body.home-page so other pages are untouched)
+   Shared redesign (scoped to body.redesigned; applied page by page as each is redone)
    ========================================================================== */
 
-body.home-page { background: #fff; }
+body.redesigned { background: #fff; }
 
-body.home-page header.site-header {
+body.redesigned header.site-header {
   background: #fff;
   color: var(--text);
   box-shadow: 0 1px 3px rgba(0,0,0,0.06);
   position: sticky;
   top: 0;
 }
-body.home-page .nav-inner { max-width: var(--wide); padding: 1rem 1.5rem; }
-body.home-page .site-title,
-body.home-page .site-title a { color: var(--navy); font-size: 1.3rem; }
-body.home-page nav.main-nav a {
+body.redesigned .nav-inner { max-width: var(--wide); padding: 1rem 1.5rem; }
+body.redesigned .site-title,
+body.redesigned .site-title a { color: var(--navy); font-size: 1.3rem; }
+body.redesigned nav.main-nav a {
   color: var(--text-muted);
   font-weight: 600;
   border-bottom: 2px solid transparent;
 }
-body.home-page nav.main-nav a:hover,
-body.home-page nav.main-nav a.active {
+body.redesigned nav.main-nav a:hover,
+body.redesigned nav.main-nav a.active {
   color: var(--sky);
   border-bottom-color: var(--sky);
 }
-body.home-page .nav-toggle {
+body.redesigned .nav-toggle {
   color: var(--navy);
   border-color: var(--border);
 }
@@ -533,6 +533,28 @@ body.home-page .nav-toggle {
 .hero-cta a.primary { background: var(--sky); color: #fff !important; }
 .hero-cta a.primary:hover { background: var(--sky-dark); }
 .hero-cta a.outline { background: transparent; color: #fff !important; border: 1px solid rgba(255,255,255,0.6); }
+
+/* Compact hero-photo variant — interior pages (title only, no CTA/keywords) */
+.hero-photo.compact {
+  min-height: 220px;
+}
+.hero-photo.compact .hero-photo-inner {
+  padding: 2.2rem 1.5rem;
+}
+.hero-photo.compact h1 {
+  font-size: 2.1rem;
+  margin: 0;
+}
+.hero-photo.compact .hero-subtitle {
+  font-family: Arial, sans-serif;
+  color: #dce8f2;
+  font-size: 1rem;
+  margin: 0.5rem 0 0;
+}
+@media (max-width: 560px) {
+  .hero-photo.compact { min-height: 160px; }
+  .hero-photo.compact h1 { font-size: 1.6rem; }
+}
 .hero-cta a.outline:hover { background: rgba(255,255,255,0.12); }
 
 /* About split */
@@ -716,7 +738,7 @@ a.featured-card:hover .featured-body h3 { color: var(--sky); }
 .featured-more a:hover { background: #d9e9f9; }
 
 /* Dark footer (home page) */
-body.home-page footer.site-footer {
+body.redesigned footer.site-footer {
   background: var(--navy-dark);
   text-align: left;
   padding: 0;
@@ -758,7 +780,7 @@ body.home-page footer.site-footer {
 }
 .footer-social a svg { width: 1rem; height: 1rem; fill: #fff; flex: 0 0 auto; }
 .footer-social a:hover { background: rgba(255,255,255,0.18); }
-body.home-page .footer-disclaimer {
+body.redesigned .footer-disclaimer {
   border-top: 1px solid #2a3f56;
   margin: 0;
   padding: 0.8rem 1.5rem;
