@@ -897,3 +897,50 @@ nav.main-nav ul.dropdown-menu a.active {
   nav.main-nav ul.dropdown-menu a:hover,
   nav.main-nav ul.dropdown-menu a.active { background: transparent; }
 }
+
+/* ==========================================================================
+   Gallery grid (Photos / Videos)
+   ========================================================================== */
+
+.gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+.gallery-grid:empty { display: none; }
+
+.gallery-grid figure {
+  margin: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+}
+.gallery-grid img {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+.gallery-grid figcaption {
+  padding: 0.5rem 0.7rem;
+  font-family: Arial, sans-serif;
+  font-size: 0.85rem;
+  color: var(--text-muted);
+}
+
+.gallery-videos figure { background: #000; }
+.gallery-videos .video-frame {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+}
+.gallery-videos video,
+.gallery-videos iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
