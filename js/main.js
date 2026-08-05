@@ -20,10 +20,22 @@ document.addEventListener("DOMContentLoaded", function () {
       btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
     });
 
+    // Closing on mouseleave uses a short delay (cancelled if the pointer
+    // re-enters) so crossing the small gap between the button and the
+    // menu below it doesn't close the dropdown before a click lands.
     var li = btn.parentElement;
+    var closeTimer = null;
     li.addEventListener("mouseleave", function () {
-      li.classList.remove("open");
-      btn.setAttribute("aria-expanded", "false");
+      closeTimer = setTimeout(function () {
+        li.classList.remove("open");
+        btn.setAttribute("aria-expanded", "false");
+      }, 250);
+    });
+    li.addEventListener("mouseenter", function () {
+      if (closeTimer) {
+        clearTimeout(closeTimer);
+        closeTimer = null;
+      }
     });
   });
 
