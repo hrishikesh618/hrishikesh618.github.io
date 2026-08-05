@@ -13,6 +13,7 @@ Plain HTML/CSS/JS, no build step. Deployed via GitHub Pages directly from this r
 - `pmrf-progress.html` — PMRF Progress (nav: Research › PMRF Progress)
 - `workshops.html` — Workshops and Training
 - `academic-journey.html` — Academic Journey
+- `data-tools.html` — Data and Tools (public datasets and tools)
 - `gallery.html` — Gallery (Photos and Videos)
 - `contact.html` — Contact
 - `css/style.css` — shared stylesheet (deep navy / muted teal / light grey / muted amber palette)
@@ -77,3 +78,4 @@ All content is drawn from Hrishikesh Singh's CV, PMRF Yearly Progress Report (Ma
 - Professional headshot, Google Scholar/ORCID/LinkedIn links, and a redacted CV are not yet added.
 - Conference/workshop location maps not yet built (planned as an embedded Leaflet/Google Maps widget once venue confirmations come in).
 - Gallery page has no photos/videos yet — see "Adding Gallery media" above.
+- Data and Tools page (`data-tools.html`) is an empty shell — add entries as `.card` elements inside the "Datasets" / "Tools" `.card-grid` containers (see `.card`/`.card-grid`/`.btn` in `css/style.css` for the markup pattern already used on Conferences and Publications).
