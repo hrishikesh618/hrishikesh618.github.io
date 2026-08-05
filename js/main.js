@@ -7,8 +7,9 @@ document.addEventListener("DOMContentLoaded", function () {
     });
   }
 
-  // Nav dropdowns. Desktop also opens on hover via CSS; this click handler is
-  // what makes them usable on touch screens and via the keyboard.
+  // Nav dropdowns open only on click (not hover), and close when the
+  // pointer leaves the dropdown, on a repeat click, on outside click,
+  // on Escape, or by navigating to another page.
   var dropdownToggles = document.querySelectorAll(".dropdown-toggle");
   Array.prototype.forEach.call(dropdownToggles, function (btn) {
     btn.addEventListener("click", function (e) {
@@ -17,6 +18,12 @@ document.addEventListener("DOMContentLoaded", function () {
       var parent = btn.parentElement;
       var isOpen = parent.classList.toggle("open");
       btn.setAttribute("aria-expanded", isOpen ? "true" : "false");
+    });
+
+    var li = btn.parentElement;
+    li.addEventListener("mouseleave", function () {
+      li.classList.remove("open");
+      btn.setAttribute("aria-expanded", "false");
     });
   });
 
