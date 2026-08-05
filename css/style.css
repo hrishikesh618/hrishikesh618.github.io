@@ -1002,3 +1002,31 @@ nav.main-nav ul.dropdown-menu a.active {
   cursor: pointer;
 }
 .lightbox-close:hover { background: rgba(255,255,255,0.12); }
+
+.lightbox-nav {
+  position: absolute;
+  top: 50%;
+  z-index: 501;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0,0,0,0.35);
+  border: none;
+  color: #fff;
+  width: 2.8rem;
+  height: 2.8rem;
+  border-radius: 50%;
+  padding: 0;
+  cursor: pointer;
+}
+.lightbox-nav svg { width: 1.5rem; height: 1.5rem; }
+.lightbox-nav:hover { background: rgba(255,255,255,0.18); }
+.lightbox-nav[hidden] { display: none; }
+.lightbox-prev { left: 1rem; transform: translateY(-50%) scaleX(-1); }
+.lightbox-next { right: 1rem; transform: translateY(-50%); }
+@media (max-width: 720px) {
+  .lightbox-nav { width: 2.2rem; height: 2.2rem; }
+  .lightbox-nav svg { width: 1.2rem; height: 1.2rem; }
+  .lightbox-prev { left: 0.4rem; }
+  .lightbox-next { right: 0.4rem; }
+}
