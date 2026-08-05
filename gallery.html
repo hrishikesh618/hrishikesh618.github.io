@@ -42,22 +42,65 @@
 <main>
 
   <section>
-    <p>Photos and videos from fieldwork, conferences, workshops, and academic life at IIT Roorkee.</p>
+    <p>Photos and videos from conferences and training programmes, sports and co-curricular activities, and field visits during Hrishikesh's time at IIT Roorkee. Click any photo to enlarge it.</p>
   </section>
 
   <section>
-    <h2>Photos</h2>
+    <h2>Conferences &amp; Training Programmes</h2>
+    <div class="gallery-grid">
+
+      <button type="button" class="gallery-item" data-caption="EGU General Assembly 2026 — Austria Center Vienna">
+        <img src="assets/gallery/photos/conferences-training/egu26-2026-venue.jpg" alt="EGU General Assembly 2026 — Austria Center Vienna" loading="lazy">
+      </button>
+
+      <button type="button" class="gallery-item" data-caption="EGU General Assembly 2026 — at the welcome wall">
+        <img src="assets/gallery/photos/conferences-training/egu26-2026-welcome-wall.jpg" alt="EGU General Assembly 2026 — at the welcome wall" loading="lazy">
+      </button>
+
+      <button type="button" class="gallery-item" data-caption="EGU General Assembly 2026 — with fellow researchers">
+        <img src="assets/gallery/photos/conferences-training/egu26-2026-group-photo.jpg" alt="EGU General Assembly 2026 — with fellow researchers" loading="lazy">
+      </button>
+
+      <button type="button" class="gallery-item" data-caption="EGU General Assembly 2026 — poster session">
+        <img src="assets/gallery/photos/conferences-training/egu26-2026-poster-session.jpg" alt="EGU General Assembly 2026 — poster session" loading="lazy">
+      </button>
+
+      <button type="button" class="gallery-item" data-caption="ICRC-CORDEX 2023, Trieste — with fellow delegates">
+        <img src="assets/gallery/photos/conferences-training/icrc-cordex-2023-group-photo.jpg" alt="ICRC-CORDEX 2023, Trieste — with fellow delegates" loading="lazy">
+      </button>
+
+      <button type="button" class="gallery-item" data-caption="ICRC-CORDEX 2023, Trieste — evening with the group">
+        <img src="assets/gallery/photos/conferences-training/icrc-cordex-2023-evening.jpg" alt="ICRC-CORDEX 2023, Trieste — evening with the group" loading="lazy">
+      </button>
+
+    </div>
+  </section>
+
+  <section>
+    <h2>Sports &amp; Co-curricular Activities</h2>
     <div class="notice muted">Photos will appear here once added.</div>
-    <div class="gallery-grid" id="gallery-photos"></div>
+    <div class="gallery-grid"></div>
+  </section>
+
+  <section>
+    <h2>Field Visits</h2>
+    <div class="notice muted">Photos will appear here once added.</div>
+    <div class="gallery-grid"></div>
   </section>
 
   <section>
     <h2>Videos</h2>
     <div class="notice muted">Videos will appear here once added.</div>
-    <div class="gallery-grid gallery-videos" id="gallery-videos"></div>
+    <div class="gallery-grid gallery-videos"></div>
   </section>
 
 </main>
+
+<div class="lightbox" id="lightbox">
+  <button type="button" class="lightbox-close" aria-label="Close">&times;</button>
+  <img src="" alt="">
+  <p class="lightbox-caption"></p>
+</div>
 
 <footer class="site-footer">
   <div class="footer-inner">
@@ -77,5 +120,6 @@
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/gallery.js"></script>
 </body>
 </html>

@@ -40,11 +40,32 @@ Then open `http://localhost:8123`.
 
 ## Adding Gallery media
 
-Drop image files in `assets/gallery/photos/` and video files in
-`assets/gallery/videos/`, then add matching `<figure>` markup to
-`gallery.html`'s `#gallery-photos` / `#gallery-videos` grids (see the
-`.gallery-grid` rules in `css/style.css` for the expected structure —
-images want roughly a 4:3 crop, videos 16:9).
+Photos are grouped by category, each in its own subfolder under
+`assets/gallery/photos/`:
+
+- `conferences-training/` — conferences and training programmes organised/attended
+- `sports-cocurricular/` — sports and co-curricular activities
+- `field-visits/` — field visits
+
+Videos go in `assets/gallery/videos/` (not yet split by category).
+
+Drop files in the relevant folder, then add a matching `<button
+class="gallery-item">` to the corresponding grid in `gallery.html`:
+
+```html
+<button type="button" class="gallery-item" data-caption="Caption shown in the lightbox">
+  <img src="assets/gallery/photos/<category>/<file>.jpg" alt="Same caption text" loading="lazy">
+</button>
+```
+
+Clicking a photo opens it in a lightbox (`js/gallery.js`) showing the
+`data-caption` text. Videos use a plain `<figure>` with a `.video-frame`
+wrapper (see the `.gallery-videos` CSS rules) rather than the lightbox.
+
+Large phone/camera photos should be downsized before committing —
+Pillow works well: `img.thumbnail((1800, 1800)); img.save(path, "JPEG",
+quality=82, optimize=True)`, after `ImageOps.exif_transpose(img)` to
+bake in the correct rotation.
 
 ## Content sourcing
 
