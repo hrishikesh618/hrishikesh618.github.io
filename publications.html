@@ -15,9 +15,13 @@
       <ul>
         <li><a href="index.html">Home</a></li>
         <li><a href="about.html">About</a></li>
-        <li><a href="research.html">Research</a></li>
-        <li><a href="publications.html" class="active">Publications</a></li>
-        <li><a href="conferences.html">Conferences</a></li>
+        <li class="has-dropdown">
+          <button type="button" class="dropdown-toggle active" aria-expanded="false" aria-haspopup="true">Research <span class="caret" aria-hidden="true">&#9662;</span></button>
+          <ul class="dropdown-menu">
+            <li><a href="publications.html" class="active">Publications</a></li>
+            <li><a href="conferences.html">Conferences</a></li>
+          </ul>
+        </li>
         <li><a href="workshops.html">Workshops and Training</a></li>
         <li><a href="academic-journey.html">Academic Journey</a></li>
         <li><a href="pmrf-progress.html">PMRF Progress</a></li>
@@ -36,6 +40,68 @@
 <main>
 
   <section>
+    <p>My doctoral research develops a socio-hydrological framework to understand, map, and prioritise flood risk across India, from major river basins to rapidly growing cities. The work proceeds along two complementary pathways: a basin-to-national-scale hazard and vulnerability pipeline, and a city-scale compound-flood risk assessment for India's 100 Smart Cities.</p>
+  </section>
+
+  <section>
+    <h2>Research themes</h2>
+    <p class="meta-line">The strands the doctoral work is organised into. Where a theme has already produced a paper, its full record — citation, impact factor, citation count and DOI — sits in the publications list further down rather than being repeated here.</p>
+
+    <h3>Reanalysis Evaluation</h3>
+    <div class="card">
+      <p><strong>Summary:</strong> Systematic evaluation of atmospheric reanalysis precipitation datasets to identify which are reliable enough for flood modelling across India's river basins.</p>
+      <p class="meta-line"><strong>Status:</strong> Published — Singh &amp; Mohanty (2025), <em>International Journal of Applied Earth Observation and Geoinformation</em>. Methods, metrics and DOI are in the publications list below.</p>
+    </div>
+
+    <h3>Mahanadi Flood Modelling</h3>
+    <div class="card">
+      <p><strong>Summary:</strong> A regional case study testing whether ERA5 reanalysis rainfall can reproduce observed flood inundation — the foundational study of the thesis.</p>
+      <p class="meta-line"><strong>Status:</strong> Published — Singh &amp; Mohanty (2023), <em>Environmental Monitoring and Assessment</em>. Methods, validation and DOI are in the publications list below.</p>
+    </div>
+
+    <h3>Nationwide Flood Hazard</h3>
+    <div class="card">
+      <p><strong>Summary:</strong> A 100 m-resolution hydrodynamic flood-hazard model covering 25 major Indian river basins.</p>
+      <p><strong>Methods:</strong> LISFLOOD-FP hydrodynamic simulation forced with the best-performing reanalysis rainfall, validated against the July 2023 North India flood event using MODIS-derived inundation extent.</p>
+      <p><strong>Output:</strong> Validation statistics — Hit Rate 0.81, False Alarm Ratio 0.41, Error Bias 2.06 — supporting a nationwide flood-hazard layer.</p>
+      <p class="meta-line"><strong>Status:</strong> Core component of ongoing PMRF doctoral research (see <a href="pmrf-progress.html">PMRF Progress</a>).</p>
+    </div>
+
+    <h3>Vulnerability and National Risk</h3>
+    <div class="card">
+      <p><strong>Summary:</strong> District-level socio-economic and physical vulnerability scoring, combined with hazard to produce a composite national flood-risk picture.</p>
+      <p><strong>Methods:</strong> Shannon Entropy weighting and TOPSIS ranking applied to demographic, infrastructure, and physical exposure indicators across 680+ districts.</p>
+      <p><strong>Output:</strong> A district-level Flood Vulnerability Index feeding into a composite national flood-risk assessment.</p>
+      <p class="meta-line"><strong>Status:</strong> Methodology published as a book chapter (listed below); national risk synthesis ongoing.</p>
+    </div>
+
+    <h3>Multi-day Flood Response</h3>
+    <div class="card">
+      <p><strong>Summary:</strong> Examines how multi-day rainfall events translate into differential flood resilience across Indian basins.</p>
+      <p><strong>Methods:</strong> Multi-day design-storm derivation combined with hydrodynamic simulation to compare basin responses to sustained rainfall.</p>
+      <p><strong>Output:</strong> A comparative view of basin-scale resilience to multi-day flood-generating storms.</p>
+      <p class="meta-line"><strong>Status:</strong> Manuscript in preparation for <em>Geophysical Research Letters</em> — not yet submitted.</p>
+    </div>
+
+    <h3>TRIC: 100 Smart Cities</h3>
+    <div class="card">
+      <p><strong>Summary:</strong> A city-scale Tier-based Risk Index for Cities (TRIC) quantifying compound flood-risk disparities across India's 100 Smart Cities.</p>
+      <p><strong>Methods:</strong> A copula-based framework combining urban-scale hazard modelling with exposed-population and GDP data and a city-tier classification system.</p>
+      <p><strong>Output:</strong> 10.35 million people (7.64%) and US$147.48 billion in GDP (9.03%) identified in High + Very High compound-hazard zones; Surat, Ahmedabad, Chinchwad, Visakhapatnam, Kalyan and Guwahati identified as Tier-5 (highest-risk) cities, with 27 Tier-4 cities making up the rest of the national priority set.</p>
+      <p class="meta-line"><strong>Status:</strong> Manuscript under internal review (see Under review / in preparation below).</p>
+    </div>
+
+    <h3>Tools and Workflows</h3>
+    <div class="card">
+      <p><strong>Summary:</strong> A browser-based decision-support tool for comparing reanalysis and flood datasets interactively.</p>
+      <p><strong>Methods:</strong> Interactive NetCDF-based comparison tool; nationwide simulations run on PARAM Ganga, a National Supercomputing Mission facility at IIT Roorkee.</p>
+      <p><strong>Output:</strong> A working prototype supporting dataset selection and correlation analysis for flood-risk research.</p>
+      <p class="meta-line"><strong>Status:</strong> In active development.</p>
+    </div>
+  </section>
+
+  <section>
+    <h2>Publications</h2>
     <p>Published journal articles and the book chapter, first-author and co-authored alike (each card is tagged), sortable by date, journal impact factor, or citation count. Manuscripts still under review or in preparation are listed separately at the bottom, since they don't yet have citation or impact-factor data.</p>
 
     <div class="pub-toolbar">
@@ -208,7 +274,7 @@
     <div class="card">
       <p><span class="tag amber">Under internal review</span> Singh, H. and Mohanty, M.P. A nationwide ranking of India's 100 Smart Cities under disparate urban flood risk.</p>
       <p class="meta-line">Status: under internal review. No target journal is named publicly at this stage.</p>
-      <p class="meta-line">Introduces the Tier-based Risk Index for Cities (TRIC), a copula-based framework quantifying compound pluvial-fluvial flood risk across India's 100 Smart Cities. Finds 10.35 million people (7.64%) and US$147.48 billion in GDP (9.03%) exposed to High/Very-High hazard; identifies Surat, Ahmedabad, Chinchwad, Visakhapatnam, Kalyan and Guwahati as Tier-5 (highest-risk) cities.</p>
+      <p class="meta-line">What it reports is described under <strong>TRIC: 100 Smart Cities</strong> in the research themes above.</p>
     </div>
 
     <div class="card">

@@ -798,3 +798,103 @@ body.redesigned .footer-disclaimer {
   .hero-photo h1 { font-size: 2.1rem; }
   .hero-photo { min-height: 420px; }
 }
+
+/* ==========================================================================
+   Nav dropdown (works in both the legacy navy nav and the redesigned white nav)
+
+   Selectors are prefixed with nav.main-nav throughout: the base rule
+   `nav.main-nav ul { display: flex }` has higher specificity than a bare
+   `.dropdown-menu`, and would otherwise keep the menu permanently visible.
+   ========================================================================== */
+
+nav.main-nav li.has-dropdown { position: relative; }
+
+nav.main-nav .dropdown-toggle {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 0.92rem;
+  color: #dfe7ee;
+  padding: 0.35rem 0.15rem;
+  border-bottom: 2px solid transparent;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  line-height: inherit;
+}
+nav.main-nav .dropdown-toggle:hover,
+nav.main-nav li.has-dropdown.open > .dropdown-toggle,
+nav.main-nav .dropdown-toggle.active {
+  color: #fff;
+  border-bottom-color: var(--amber);
+}
+nav.main-nav .dropdown-toggle .caret { font-size: 0.7em; }
+
+body.redesigned nav.main-nav .dropdown-toggle {
+  color: var(--text-muted);
+  font-weight: 600;
+}
+body.redesigned nav.main-nav .dropdown-toggle:hover,
+body.redesigned nav.main-nav li.has-dropdown.open > .dropdown-toggle,
+body.redesigned nav.main-nav .dropdown-toggle.active {
+  color: var(--sky);
+  border-bottom-color: var(--sky);
+}
+
+nav.main-nav ul.dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  min-width: 12rem;
+  background: #fff;
+  border: 1px solid var(--border);
+  border-radius: 6px;
+  box-shadow: 0 8px 20px rgba(20,41,63,0.16);
+  padding: 0.3rem 0;
+  margin: 0.35rem 0 0;
+  list-style: none;
+  z-index: 200;
+  flex-direction: column;
+  gap: 0;
+}
+nav.main-nav li.has-dropdown.open > ul.dropdown-menu { display: block; }
+@media (min-width: 721px) {
+  nav.main-nav li.has-dropdown:hover > ul.dropdown-menu { display: block; }
+}
+nav.main-nav ul.dropdown-menu li { display: block; }
+nav.main-nav ul.dropdown-menu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  color: var(--navy) !important;
+  border-bottom: none !important;
+  white-space: nowrap;
+}
+nav.main-nav ul.dropdown-menu a:hover,
+nav.main-nav ul.dropdown-menu a.active {
+  background: var(--sky-light);
+  color: var(--sky-dark) !important;
+  text-decoration: none;
+}
+
+@media (max-width: 720px) {
+  nav.main-nav .dropdown-toggle { width: 100%; justify-content: space-between; }
+  nav.main-nav ul.dropdown-menu {
+    position: static;
+    background: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0 0 0 1rem;
+    margin: 0;
+    min-width: 0;
+  }
+  nav.main-nav ul.dropdown-menu a {
+    color: #dfe7ee !important;
+    padding: 0.5rem 0.1rem;
+    border-bottom: 1px solid #2b4a68 !important;
+  }
+  body.redesigned nav.main-nav ul.dropdown-menu a { color: var(--text-muted) !important; }
+  nav.main-nav ul.dropdown-menu a:hover,
+  nav.main-nav ul.dropdown-menu a.active { background: transparent; }
+}

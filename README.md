@@ -8,15 +8,19 @@ Plain HTML/CSS/JS, no build step. Deployed via GitHub Pages directly from this r
 
 - `index.html` — Home
 - `about.html` — About
-- `research.html` — Research
-- `publications.html` — Publications
-- `conferences.html` — Conferences
+- `publications.html` — Research themes + Publications (nav: Research › Publications)
+- `conferences.html` — Conferences (nav: Research › Conferences)
 - `workshops.html` — Workshops and Training
 - `academic-journey.html` — Academic Journey
 - `pmrf-progress.html` — PMRF Progress
 - `contact.html` — Contact
 - `css/style.css` — shared stylesheet (deep navy / muted teal / light grey / muted amber palette)
-- `js/main.js` — mobile navigation toggle
+- `js/main.js` — mobile navigation toggle and nav dropdowns
+- `js/publications.js` — publication sorting (year / impact factor / citations)
+
+"Research" is a nav dropdown rather than a page of its own; the former
+`research.html` was merged into `publications.html` as a "Research themes"
+section above the publications list.
 
 ## Local preview
 
