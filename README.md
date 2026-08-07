@@ -77,5 +77,11 @@ All content is drawn from Hrishikesh Singh's CV, PMRF Yearly Progress Report (Ma
 - TRIC manuscript journal name unconfirmed (PMRF report says *Nature Cities*; Progress PPT says *Nature Communications Earth and Environment*) — site currently says "journal status to be confirmed."
 - Professional headshot, Google Scholar/ORCID/LinkedIn links, and a redacted CV are not yet added.
 - Conference/workshop location maps not yet built (planned as an embedded Leaflet/Google Maps widget once venue confirmations come in).
-- Gallery page has no photos/videos yet — see "Adding Gallery media" above.
-- Data and Tools page (`data-tools.html`) is an empty shell — add entries as `.card` elements inside the "Datasets" / "Tools" `.card-grid` containers (see `.card`/`.card-grid`/`.btn` in `css/style.css` for the markup pattern already used on Conferences and Publications).
+- Gallery page has Conferences and one Sports and one Field Visits photo; more to come — see "Adding Gallery media" above.
+- Data and Tools page (`data-tools.html`) lists CDFuse under Tools; the Datasets section is still empty. Add further entries as `.card` elements (see `.card`/`.btn` in `css/style.css` for the markup pattern already used on Conferences and Publications).
+
+## Linked tools
+
+- **CDFuse** — NetCDF dataset comparison web app.
+  Live: <https://cdfuse.streamlit.app> · Source: <https://github.com/hrishikesh618/CDFuse>
+  Deployed separately on Streamlit Community Cloud; this site only links to it.

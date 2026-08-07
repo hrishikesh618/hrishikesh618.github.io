@@ -43,7 +43,7 @@
 <main>
 
   <section>
-    <p>Publicly available datasets and tools produced during Hrishikesh's doctoral research, shared here for reuse by other researchers. See <a href="about.html#research-themes">Research themes</a> for the broader context each of these sits within.</p>
+    <p>Publicly available datasets and tools produced during Hrishikesh's doctoral research, shared here for reuse by other researchers. Everything on this page is free to use and openly licensed. See <a href="about.html#research-themes">Research themes</a> for the broader context each of these sits within.</p>
   </section>
 
   <section>
@@ -54,8 +54,22 @@
 
   <section>
     <h2>Tools</h2>
-    <div class="notice muted">Tools will be listed here once released.</div>
-    <div class="card-grid"></div>
+
+    <div class="card">
+      <h3>CDFuse — <span style="font-weight: normal; font-style: italic;">Compare. Validate. Visualise.</span></h3>
+      <p><span class="tag">Web app</span><span class="tag amber">Open source</span></p>
+      <p>A browser-based tool for comparing two gridded NetCDF datasets. Upload a candidate dataset and a reference dataset, align them in time and space, and CDFuse scores every grid cell, maps the result, and exports it in a form you can carry into a paper or a GIS.</p>
+      <p class="meta-line"><strong>Metrics:</strong> Correlation, Nash&ndash;Sutcliffe Efficiency (NSE), Kling&ndash;Gupta Efficiency (KGE), Percentage Bias (PBIAS), RMSE, MAE and Bias &mdash; each computed cell by cell over the matched time steps.</p>
+      <p class="meta-line"><strong>Handles:</strong> automatic coordinate detection, 0&ndash;360 or &minus;180&ndash;180 longitudes, either latitude ordering, extra dimensions such as pressure level, daily/monthly/seasonal/annual aggregation, linear regridding, and optional clipping to a shapefile, GeoJSON or GeoPackage boundary.</p>
+      <p class="meta-line"><strong>Exports:</strong> 300&nbsp;dpi PNG maps, CF-attributed NetCDF, GeoTIFF, CSV, a summary table, and a run report recording every setting used &mdash; individually or as a single ZIP.</p>
+      <p class="meta-line">CDFuse is deliberately dataset-neutral: it assumes nothing about any product's timestamping or accumulation convention. Time shifts and hour-of-day selection are explicit controls you set for each dataset. No installation is needed, and a built-in demonstration pair lets you try the whole workflow without uploading anything.</p>
+      <p>
+        <a class="btn" href="https://cdfuse.streamlit.app" target="_blank" rel="noopener">Launch CDFuse &rarr;</a>
+        <a class="btn secondary" href="https://github.com/hrishikesh618/CDFuse" target="_blank" rel="noopener">Source code</a>
+      </p>
+      <p class="meta-line">MIT licensed. Runs on Streamlit Community Cloud; datasets are processed in your browser session and are not stored.</p>
+    </div>
+
   </section>
 
 </main>
