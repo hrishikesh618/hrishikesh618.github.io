@@ -2,3 +2,7 @@
 Thumbs.db
 *.log
 node_modules/
+
+# Local archives dropped into the working copy, never site content
+*.rar
+*.zip

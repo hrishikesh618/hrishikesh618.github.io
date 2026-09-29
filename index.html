@@ -4,14 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Hrishikesh Singh — PMRF Scholar, IIT Roorkee</title>
-<meta name="description" content="Personal academic website of Hrishikesh Singh, Prime Minister's Research Fellow and PhD scholar, Department of Water Resources Development and Management, IIT Roorkee.">
+<meta name="description" content="Personal academic website of Hrishikesh Singh, Prime Minister's Research Fellow and PhD scholar, Department of Water Resources Development and Management, IIT Roorkee. Flood-risk modelling, hydrodynamic simulation and socio-hydrological vulnerability across India.">
 <link rel="stylesheet" href="css/style.css">
 </head>
-<body class="redesigned">
+<body>
 <header class="site-header">
   <div class="nav-inner">
-    <div class="site-title"><a href="index.html">Hrishikesh Singh</a></div>
-    <button class="nav-toggle" aria-label="Toggle navigation">&#9776;</button>
+    <div class="site-title">
+      <a href="index.html">Hrishikesh Singh</a>
+      <span class="affil">Water Resources Development &amp; Management<br><b>IIT Roorkee</b></span>
+    </div>
+    <button class="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">&#9776;</button>
     <nav class="main-nav">
       <ul>
         <li><a href="index.html" class="active">Home</a></li>
@@ -34,108 +37,372 @@
   </div>
 </header>
 
+<main id="main" class="home-main">
+
+<!-- ===================== Hero ===================== -->
 <section class="hero-photo" style="--hero-img: url('/assets/header.png');">
   <div class="hero-photo-inner">
-    <h1>Hrishikesh Singh</h1>
-    <p class="hero-position">PMRF Scholar &nbsp;|&nbsp; PhD Research Scholar &nbsp;|&nbsp; Dept. of Water Resources Development and Management, IIT Roorkee</p>
-    <hr class="hero-rule">
-    <p class="hero-keywords">Flood-risk, Hydrodynamic modelling and Vulnerability</p>
-    <p class="hero-caption">Modelling Risk Through Physics of Water and the Dynamics of Exposure</p>
-    <div class="hero-cta">
-      <a href="publications.html" class="primary">Explore Research &rarr;</a>
-      <a href="conferences.html" class="outline">Conferences</a>
+
+    <div>
+      <h1 class="kinetic">
+        <span class="kinetic-eyebrow">Hrishikesh works on</span>
+        <span class="kinetic-line" id="heroRotate" aria-hidden="true"
+              data-phrases='["Nationwide Flood Hazard","Hydrodynamic Flood Modelling","Socio-hydrological Vulnerability","Compound Urban Flood Risk","Hydroclimatic Extremes"]'>Nationwide Flood Hazard</span>
+      </h1>
+      <p class="sr-only">Hrishikesh Singh works on nationwide flood hazard modelling, hydrodynamic flood simulation, socio-hydrological vulnerability, compound urban flood risk, and hydroclimatic extremes.</p>
+
+      <p class="hero-name">Prime Minister&rsquo;s Research Fellow &middot; PhD Research Scholar</p>
+      <p class="hero-position">Department of Water Resources Development and Management, Indian Institute of Technology Roorkee</p>
+      <hr class="hero-rule">
+      <p class="hero-keywords">Modelling Risk Through the Physics of Water and the Dynamics of Exposure</p>
+      <p class="hero-caption">A socio-hydrological framework for flood risk across India &mdash; from 25 river basins at 100&nbsp;m resolution down to compound flood risk in 100 Smart Cities.</p>
+
+      <div class="hero-cta">
+        <a href="publications.html" class="primary">Explore Research &rarr;</a>
+        <a href="data-tools.html" class="outline">Data &amp; Tools</a>
+      </div>
+    </div>
+
+    <!-- Featured research deck -->
+    <div class="featured-deck">
+
+      <article class="featured is-active" data-title="Reanalysis precipitation datasets over Indian basins">
+        <div class="featured-body">
+          <div class="featured-head">
+            <span class="kicker">Featured Research</span>
+            <span class="ref">Int. J. Applied Earth Observation &amp; Geoinformation &middot; 2025</span>
+          </div>
+          <div class="featured-title-row">
+            <h2>Which Reanalysis Product Can You Trust?<br>25 Indian Basins, 1990&ndash;2024</h2>
+            <a class="cta" href="https://doi.org/10.1016/j.jag.2025.104919" target="_blank" rel="noopener">Explore the Study
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+          </div>
+          <figure class="featured-figure">
+            <img loading="lazy" decoding="async" src="assets/featured-research/ijaeog-figure.jpg" alt="Ranking of reanalysis precipitation datasets across Indian river basins" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="fig-fallback">Figure &mdash; Singh &amp; Mohanty (2025), IJAEOG</div>
+          </figure>
+          <div class="stat-grid">
+            <div class="stat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 4h7v7H4zM13 4h7v7h-7zM4 13h7v7H4zM13 13h7v7h-7z"/></svg>
+              <div><b>25 basins</b><span>All Central Water Commission river basins assessed</span></div>
+            </div>
+            <div class="stat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20h18M6 16v-5M11 16V7M16 16v-8M21 16v-3"/></svg>
+              <div><b>11 metrics</b><span>Ranked with a Shannon Entropy&ndash;TOPSIS framework</span></div>
+            </div>
+            <div class="stat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3s6 6.4 6 10.4A6 6 0 016 13.4C6 9.4 12 3 12 3z"/></svg>
+              <div><b>ERA5 nationally</b><span>IMDAA leads in monsoon and mountainous basins</span></div>
+            </div>
+            <div class="stat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2l2.9 6.3 6.6.8-4.9 4.6 1.3 6.6L12 17l-5.9 3.3 1.3-6.6L2.5 9.1l6.6-.8z"/></svg>
+              <div><b>Impact factor 9.83</b><span>First-author, 2024 journal impact factor</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="featured" data-title="ERA5 for pluvial and fluvial inundation">
+        <div class="featured-body">
+          <div class="featured-head">
+            <span class="kicker">Featured Research</span>
+            <span class="ref">Water Resources Management &middot; 2025</span>
+          </div>
+          <div class="featured-title-row">
+            <h2>Can ERA5 Reproduce Pluvial and Fluvial Inundation?<br>Resource-Constrained Flood-Prone Watersheds</h2>
+            <a class="cta" href="https://doi.org/10.1007/s11269-025-04257-9" target="_blank" rel="noopener">Explore the Study
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+          </div>
+          <figure class="featured-figure">
+            <img loading="lazy" decoding="async" src="assets/featured-research/wrm-figure.jpg" alt="Design flood hazard maps derived from ERA5 rainfall and GloFAS discharge" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="fig-fallback">Figure &mdash; Singh &amp; Mohanty (2025), Water Resources Management</div>
+          </figure>
+          <div class="stat-grid">
+            <div class="stat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="10.5" cy="10.5" r="6.5"/><path d="M15.5 15.5L21 21"/></svg>
+              <div><b>Hit rate &gt; 0.8</b><span>Simulated extents validated against MODIS imagery</span></div>
+            </div>
+            <div class="stat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M2 16c2.5 0 2.5-3 5-3s2.5 3 5 3 2.5-3 5-3 2.5 3 5 3"/><path d="M2 9c2.5 0 2.5-3 5-3s2.5 3 5 3 2.5-3 5-3 2.5 3 5 3"/></svg>
+              <div><b>50, 100, 200 yr</b><span>Design flood-hazard maps as depth and momentum</span></div>
+            </div>
+            <div class="stat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4" width="18" height="17" rx="2"/><path d="M3 9h18M8 2v4M16 2v4"/></svg>
+              <div><b>3 flood events</b><span>2006, 2008 and 2011 reconstructed in LISFLOOD-FP</span></div>
+            </div>
+            <div class="stat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M4 19V5M4 19h16"/><path d="M8 15l3.5-4 3 2.5L20 7"/></svg>
+              <div><b>ERA5 + GloFAS</b><span>Rainfall and discharge tested against station records</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <article class="featured" data-title="Compound flood risk across 100 Smart Cities">
+        <div class="featured-body">
+          <div class="featured-head">
+            <span class="kicker">Featured Research</span>
+            <span class="ref">TRIC &middot; Under internal review</span>
+          </div>
+          <div class="featured-title-row">
+            <h2>Ranking India&rsquo;s 100 Smart Cities by Flood Risk<br>A Tier-Based Compound Risk Index</h2>
+            <a class="cta" href="about.html#research-themes">Read the Theme
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h16M14 6l6 6-6 6"/></svg></a>
+          </div>
+          <figure class="featured-figure">
+            <img loading="lazy" decoding="async" src="assets/featured-research/tric-figure.jpg" alt="Tier-based compound flood risk ranking of India's 100 Smart Cities" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
+            <div class="fig-fallback">TRIC &mdash; Tier-based Risk Index for Cities</div>
+          </figure>
+          <div class="stat-grid">
+            <div class="stat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l5-4 5 4v13M9 21v-4h2v4"/><path d="M15 21V11l4-2v12"/></svg>
+              <div><b>100 cities</b><span>Every Indian Smart City ranked on compound flood risk</span></div>
+            </div>
+            <div class="stat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="6" r="3"/><path d="M6 21v-3a6 6 0 0112 0v3"/></svg>
+              <div><b>10.35 million</b><span>People (7.64%) in High to Very High hazard zones</span></div>
+            </div>
+            <div class="stat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v10M9.5 9.5h5M9.5 14.5h5"/></svg>
+              <div><b>US$147.48 bn</b><span>GDP exposed (9.03%) across the hazard zones</span></div>
+            </div>
+            <div class="stat">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M3 20l6-7 4 4 3-4 5 7z"/><circle cx="8" cy="6" r="2"/></svg>
+              <div><b>6 Tier-5 cities</b><span>Highest-risk set, with 27 Tier-4 cities behind them</span></div>
+            </div>
+          </div>
+        </div>
+      </article>
+
+      <div class="deck-nav">
+        <button type="button" class="deck-arrow deck-prev" aria-label="Previous study">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 18l-6-6 6-6"/></svg>
+        </button>
+        <div class="deck-dots"></div>
+        <button type="button" class="deck-arrow deck-next" aria-label="Next study">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M9 6l6 6-6 6"/></svg>
+        </button>
+      </div>
+
     </div>
   </div>
 </section>
 
-<main>
+<!-- ===================== Research themes ===================== -->
+<section class="themes">
+  <div class="wrap">
+    <h2>Research Themes</h2>
+    <div class="tcards">
 
-  <section class="about-split">
-    <div class="about-portrait">
-      <img src="assets/portrait.png" alt="Portrait of Hrishikesh Singh">
+      <a class="tcard" href="about.html#research-themes">
+        <div class="tcard-fig">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M2 17c2.6 0 2.6-3 5.2-3s2.6 3 5.2 3 2.6-3 5.2-3 2.6 3 4.4 3"/><path d="M2 11c2.6 0 2.6-3 5.2-3s2.6 3 5.2 3 2.6-3 5.2-3 2.6 3 4.4 3"/><path d="M12 2v3"/></svg>
+        </div>
+        <div class="tcard-body">
+          <h3>Reanalysis Evaluation</h3>
+          <p>Testing which reanalysis rainfall products are reliable enough to drive flood models across Indian basins.</p>
+          <span class="tcard-rule"></span>
+        </div>
+      </a>
+
+      <a class="tcard" href="about.html#research-themes">
+        <div class="tcard-fig">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 6l6-3 6 3 6-3v15l-6 3-6-3-6 3z"/><path d="M9 3v15M15 6v15"/></svg>
+        </div>
+        <div class="tcard-body">
+          <h3>Nationwide Flood Hazard</h3>
+          <p>A 100&nbsp;m-resolution hydrodynamic flood-hazard model spanning 25 major Indian river basins.</p>
+          <span class="tcard-rule"></span>
+        </div>
+      </a>
+
+      <a class="tcard" href="about.html#research-themes">
+        <div class="tcard-fig">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><circle cx="9" cy="7" r="3"/><path d="M3 21v-2a5 5 0 015-5h2a5 5 0 015 5v2"/><path d="M17 11l2 2 4-4"/></svg>
+        </div>
+        <div class="tcard-body">
+          <h3>Vulnerability &amp; National Risk</h3>
+          <p>District-level socio-economic and physical vulnerability across 680+ districts, combined with hazard.</p>
+          <span class="tcard-rule"></span>
+        </div>
+      </a>
+
+      <a class="tcard" href="about.html#research-themes">
+        <div class="tcard-fig">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M3 21h18M5 21V8l5-4 5 4v13"/><path d="M15 21V12l4-2v11"/><path d="M9 12h2M9 16h2"/></svg>
+        </div>
+        <div class="tcard-body">
+          <h3>TRIC &mdash; 100 Smart Cities</h3>
+          <p>A copula-based index ranking compound pluvial&ndash;fluvial flood risk across India&rsquo;s 100 Smart Cities.</p>
+          <span class="tcard-rule"></span>
+        </div>
+      </a>
+
+      <a class="tcard" href="data-tools.html">
+        <div class="tcard-fig">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round"><path d="M9 3H5a2 2 0 00-2 2v4M15 3h4a2 2 0 012 2v4M9 21H5a2 2 0 01-2-2v-4M15 21h4a2 2 0 002-2v-4"/><circle cx="12" cy="12" r="3"/></svg>
+        </div>
+        <div class="tcard-body">
+          <h3>Tools &amp; Workflows</h3>
+          <p>Open tools for the community &mdash; including CDFuse, a browser-based NetCDF dataset comparison app.</p>
+          <span class="tcard-rule"></span>
+        </div>
+      </a>
+
     </div>
-    <div class="about-text">
-      <h2>I am..</h2>
-      <p>a Prime Minister's Research Fellow (PMRF) and PhD Research Scholar in the Department of Water Resources Development and Management at the Indian Institute of Technology Roorkee, working under the supervision of Prof. Mohit Prakash Mohanty. My doctoral research develops a socio-hydrological framework to capture flood-risk dynamics across India, combining nationwide hydrodynamic flood-hazard modelling and district-level vulnerability assessment at the basin scale with a compound-flood risk index for 100 Indian cities at the urban scale. I work with reanalysis hydro-meteorological datasets, hydrodynamic simulation (LISFLOOD-FP), extreme-value statistics, copula modelling, and multi-criteria decision-making to translate flood hazard into risk information that is usable for planning and disaster-risk management.</p>
-      <p class="placeholder-note">Find me on <a href="https://www.linkedin.com/in/hrishikesh-singh-049377238/" target="_blank" rel="noopener">LinkedIn</a> and <a href="https://scholar.google.com/citations?user=8gPMWowAAAAJ&hl=en" target="_blank" rel="noopener">Google Scholar</a>. An ORCID link and a CV download will be added here soon — in the meantime, please use the <a href="contact.html">Contact page</a> for direct correspondence.</p>
-      <div class="keyword-pills">
-        <span class="pill">Global-Flood Modelling</span>
-        <span class="pill">Urban Flood Modelling</span>
-        <span class="pill">MCDM</span>
-        <span class="pill">Socio-hydrology</span>
-        <span class="pill">Flood-Risk</span>
-        <span class="pill">Climate extremes</span>
-        <span class="pill">Statistical Analysis</span>
+  </div>
+</section>
+
+<!-- ===================== Updates and pictures ===================== -->
+<section class="band">
+  <div class="wrap panels">
+
+    <div class="panel">
+      <div class="panel-head">
+        <h2>Recent Updates</h2>
+        <a href="academic-journey.html">Full journey</a>
+      </div>
+      <div class="panel-body">
+
+        <div class="update">
+          <span class="u-kicker">Tool release</span><span class="u-new">New</span>
+          <h3>CDFuse released publicly &mdash; a browser-based tool for comparing gridded NetCDF datasets</h3>
+          <p class="u-date">August 2026</p>
+        </div>
+
+        <div class="update">
+          <span class="u-kicker">Conference</span>
+          <h3>Poster presented at the EGU General Assembly 2026, Vienna &mdash; dual-scale flood risk assessment in India</h3>
+          <p class="u-date">May 2026</p>
+        </div>
+
+        <div class="update">
+          <span class="u-kicker">Publication</span>
+          <h3>Multi-scale assessment and entropy&ndash;MCDM framework for reanalysis precipitation datasets &mdash; <em>IJAEOG</em></h3>
+          <p class="u-date">2025</p>
+        </div>
+
+        <div class="update">
+          <span class="u-kicker">Publication</span>
+          <h3>Performance of ERA5 products in capturing pluvial and fluvial inundation &mdash; <em>Water Resources Management</em></h3>
+          <p class="u-date">2025</p>
+        </div>
+
+        <div class="update">
+          <span class="u-kicker">Publication</span>
+          <h3>Socioeconomic-cum-physical vulnerability to riverine floods &mdash; book chapter, Springer</h3>
+          <p class="u-date">2025</p>
+        </div>
+
       </div>
     </div>
-  </section>
 
-  <section class="stats-band" style="margin: 0 -1.5rem;">
-    <div class="stats-band-inner">
-      <div class="stat-item"><span class="num">25</span><span class="label">major Indian river basins modelled at 100 m resolution</span></div>
-      <div class="stat-item"><span class="num">680+</span><span class="label">Indian districts assessed for flood vulnerability</span></div>
-      <div class="stat-item"><span class="num">100</span><span class="label">Smart Cities ranked under TRIC</span></div>
-      <div class="stat-item"><span class="num">3</span><span class="label">first-author journal papers published (2023–2025); 1 further manuscript under review</span></div>
+    <div class="panel">
+      <div class="panel-head">
+        <h2>In Pictures</h2>
+        <a href="gallery.html">View gallery</a>
+      </div>
+      <div class="shots">
+        <figure class="is-active">
+          <img loading="lazy" decoding="async" src="assets/gallery/photos/conferences-training/egu26-2026-welcome-wall.jpg" alt="At the EGU General Assembly 2026 welcome wall, Vienna">
+          <figcaption>EGU General Assembly 2026 &mdash; Vienna</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" decoding="async" src="assets/gallery/photos/conferences-training/egu25-2025-poster-session.jpg" alt="Presenting a poster at the EGU General Assembly 2025">
+          <figcaption>Presenting at EGU 2025 &mdash; Vienna</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" decoding="async" src="assets/gallery/photos/conferences-training/icrc-cordex-2023-presentation.jpg" alt="Presenting at ICRC-CORDEX 2023, Trieste">
+          <figcaption>ICRC-CORDEX 2023 &mdash; Trieste</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" decoding="async" src="assets/gallery/photos/conferences-training/raster-2023-group-photo-1.jpg" alt="RASTER 2023 workshop participants and organisers at IIT Roorkee">
+          <figcaption>RASTER 2023 workshop &mdash; IIT Roorkee</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" decoding="async" src="assets/gallery/photos/field-visits/raster-2023-haridwar-field-trip.jpg" alt="RASTER 2023 field trip to Haridwar">
+          <figcaption>Field trip to Haridwar &mdash; RASTER 2023</figcaption>
+        </figure>
+        <figure>
+          <img loading="lazy" decoding="async" src="assets/gallery/photos/sports-cocurricular/water-warriors-sangram-cricket.jpg" alt="Water Warriors, the WRDM departmental cricket team">
+          <figcaption>Water Warriors &mdash; Sangram tournament</figcaption>
+        </figure>
+      </div>
+      <div class="shot-dots"></div>
     </div>
-  </section>
 
-  <section class="featured-research">
-    <h2>Featured Research</h2>
-    <div class="featured-grid">
+  </div>
+</section>
 
-      <a class="featured-card" href="https://doi.org/10.1007/s11269-025-04257-9" target="_blank" rel="noopener">
-        <div class="featured-img">
-          <img src="assets/featured-research/wrm-figure.jpg" alt="Figure from Singh and Mohanty (2025), Water Resources Management" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="img-fallback" style="display:none;">Figure — Singh &amp; Mohanty (2025), Water Resources Management</div>
-          <span class="featured-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8 8 5 11.5 5 15a7 7 0 0 0 14 0c0-3.5-3-7-7-13z"/></svg>
-          </span>
-        </div>
-        <div class="featured-body">
-          <h3>Performance of ERA5 Products in Capturing Pluvial and Fluvial Inundation</h3>
-          <p>A statistical-cum-hydrodynamic framework evaluating ERA5 rainfall and GloFAS discharge for flood-hazard mapping in resource-constrained watersheds. <em>Water Resources Management</em> (2025).</p>
-        </div>
-      </a>
-
-      <a class="featured-card" href="https://doi.org/10.1016/j.jag.2025.104919" target="_blank" rel="noopener">
-        <div class="featured-img">
-          <img src="assets/featured-research/ijaeog-figure.jpg" alt="Figure from Singh and Mohanty (2025), International Journal of Applied Earth Observation and Geoinformation" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">
-          <div class="img-fallback" style="display:none;">Figure — Singh &amp; Mohanty (2025), IJAEOG</div>
-          <span class="featured-icon" aria-hidden="true">
-            <svg viewBox="0 0 24 24"><path d="M12 2C8 8 5 11.5 5 15a7 7 0 0 0 14 0c0-3.5-3-7-7-13z"/></svg>
-          </span>
-        </div>
-        <div class="featured-body">
-          <h3>Multi-scale Assessment and Entropy-MCDM Framework for Reanalysis Precipitation Datasets</h3>
-          <p>Ranks ERA5, IMDAA, MERRA-2 and CFSR/CFSv2 against IMD observations across 25 Indian basins using a Shannon Entropy-TOPSIS decision framework. <em>International Journal of Applied Earth Observation and Geoinformation</em> (2025).</p>
-        </div>
-      </a>
-
-    </div>
-    <div class="featured-more">
-      <a href="publications.html">Read more &rarr;</a>
-    </div>
-  </section>
+<!-- ===================== At a glance ===================== -->
+<section class="stats-band">
+  <div class="stats-band-inner">
+    <div class="stat-item"><span class="num">25</span><span class="label">major Indian river basins modelled at 100&nbsp;m resolution</span></div>
+    <div class="stat-item"><span class="num">680+</span><span class="label">districts assessed for flood vulnerability</span></div>
+    <div class="stat-item"><span class="num">100</span><span class="label">Smart Cities ranked under TRIC</span></div>
+    <div class="stat-item"><span class="num">3</span><span class="label">first-author journal papers (2023&ndash;2025); 1 manuscript under review</span></div>
+  </div>
+</section>
 
 </main>
 
 <footer class="site-footer">
-  <div class="footer-inner">
-    <p class="footer-copy">&copy; 2026 Hrishikesh Singh. All rights reserved.</p>
-    <div class="footer-social">
-      <a href="https://www.linkedin.com/in/hrishikesh-singh-049377238/" target="_blank" rel="noopener" title="LinkedIn">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 2H3.55A1.55 1.55 0 0 0 2 3.55v16.9A1.55 1.55 0 0 0 3.55 22h16.9A1.55 1.55 0 0 0 22 20.45V3.55A1.55 1.55 0 0 0 20.45 2zM8.34 18.34H5.67v-8.4h2.67zM7 8.75a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1zm11.34 9.59h-2.67v-4.4c0-1.24-.45-1.9-1.36-1.9-.83 0-1.36.56-1.58 1.1a2 2 0 0 0-.1.71v4.49h-2.67s.03-7.3 0-8.4h2.67v1.24a2.65 2.65 0 0 1 2.41-1.33c1.76 0 3.3 1.15 3.3 3.62z"/></svg>
-        LinkedIn
-      </a>
-      <a href="https://scholar.google.com/citations?user=8gPMWowAAAAJ&hl=en" target="_blank" rel="noopener" title="Google Scholar">
-        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zm0 13.5L5 12.79V17c0 2.21 3.13 4 7 4s7-1.79 7-4v-4.21l-7 3.71z"/></svg>
-        Google Scholar
-      </a>
+  <div class="foot-grid">
+
+    <div class="foot-brand">
+      <h3>Hrishikesh Singh</h3>
+      <p>Prime Minister&rsquo;s Research Fellow and PhD Research Scholar, Department of Water Resources Development and Management, Indian Institute of Technology Roorkee, Roorkee 247667, Uttarakhand, India.</p>
+      <div class="footer-social">
+        <a href="https://www.linkedin.com/in/hrishikesh-singh-049377238/" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.45 2H3.55A1.55 1.55 0 0 0 2 3.55v16.9A1.55 1.55 0 0 0 3.55 22h16.9A1.55 1.55 0 0 0 22 20.45V3.55A1.55 1.55 0 0 0 20.45 2zM8.34 18.34H5.67v-8.4h2.67zM7 8.75a1.55 1.55 0 1 1 0-3.1 1.55 1.55 0 0 1 0 3.1zm11.34 9.59h-2.67v-4.4c0-1.24-.45-1.9-1.36-1.9-.83 0-1.36.56-1.58 1.1a2 2 0 0 0-.1.71v4.49h-2.67s.03-7.3 0-8.4h2.67v1.24a2.65 2.65 0 0 1 2.41-1.33c1.76 0 3.3 1.15 3.3 3.62z"/></svg>
+          LinkedIn
+        </a>
+        <a href="https://scholar.google.com/citations?user=8gPMWowAAAAJ&hl=en" target="_blank" rel="noopener">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3 1 9l11 6 9-4.91V17h2V9L12 3zm0 13.5L5 12.79V17c0 2.21 3.13 4 7 4s7-1.79 7-4v-4.21l-7 3.71z"/></svg>
+          Google Scholar
+        </a>
+      </div>
     </div>
+
+    <div class="foot-col">
+      <h4>Research</h4>
+      <ul>
+        <li><a href="publications.html">Publications</a></li>
+        <li><a href="conferences.html">Conferences</a></li>
+        <li><a href="pmrf-progress.html">PMRF Progress</a></li>
+        <li><a href="about.html#research-themes">Research themes</a></li>
+      </ul>
+    </div>
+
+    <div class="foot-col">
+      <h4>Resources</h4>
+      <ul>
+        <li><a href="data-tools.html">Data and Tools</a></li>
+        <li><a href="https://cdfuse.streamlit.app" target="_blank" rel="noopener">CDFuse</a></li>
+        <li><a href="workshops.html">Workshops and Training</a></li>
+        <li><a href="gallery.html">Gallery</a></li>
+      </ul>
+    </div>
+
+    <div class="foot-col">
+      <h4>Contact</h4>
+      <ul>
+        <li><a href="mailto:hrishikesh_s@wr.iitr.ac.in">hrishikesh_s@wr.iitr.ac.in</a></li>
+        <li><span>WRD&amp;M Department</span></li>
+        <li><span>IIT Roorkee, 247667 India</span></li>
+        <li><a href="contact.html">Contact page</a></li>
+      </ul>
+    </div>
+
   </div>
-  <p class="footer-disclaimer">This is a personal academic website maintained by Hrishikesh Singh. It is not the official website of IIT Roorkee or the Prime Minister's Research Fellows scheme.</p>
+
+  <div class="foot-bottom">
+    <p class="footer-copy">&copy; 2026 Hrishikesh Singh. All rights reserved.</p>
+    <p class="footer-disclaimer">This is a personal academic website maintained by Hrishikesh Singh. It is not the official website of IIT Roorkee or the Prime Minister's Research Fellows scheme.</p>
+  </div>
 </footer>
 
 <script src="js/main.js"></script>
+<script src="js/home.js"></script>
 </body>
 </html>
