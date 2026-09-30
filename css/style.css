@@ -1087,11 +1087,12 @@ main.banded-main > section { margin-bottom: 0; }
 .social-links a:hover {
   transform: translateY(-2px);
   border-color: var(--blue);
-  color: var(--blue-600);
   box-shadow: var(--shadow);
   text-decoration: none;
 }
-.social-links svg { width: 20px; height: 20px; fill: currentColor; display: block; }
+/* Each mark carries its own brand fills, so the tile stays white and only
+   lifts on hover rather than recolouring the logo. */
+.social-links svg { width: 22px; height: 22px; display: block; }
 
 .pi-contact {
   list-style: none;
