@@ -423,14 +423,25 @@ nav.main-nav ul.dropdown-menu a.active {
 }
 .featured.is-active { display: block; }
 
-.featured-body { padding: 1.05rem 1.15rem 1.15rem; }
+/* Three rows: the kicker strip, the title, and then a single cell that the
+   figure, the key numbers and the CTA all share. Stacking them lets the
+   numbers sit over the foot of the image and grow up it on hover, instead
+   of occupying a block of their own below it. */
+.featured-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  grid-template-rows: auto auto minmax(0, 1fr);
+  row-gap: .55rem;
+  padding: 1.05rem 1.15rem 1.15rem;
+}
 
 .featured-head {
+  grid-row: 1;
+  grid-column: 1;
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: .75rem;
-  margin-bottom: .6rem;
 }
 .featured-head .kicker {
   font-size: .68rem;
@@ -441,14 +452,12 @@ nav.main-nav ul.dropdown-menu a.active {
 }
 .featured-head .ref { font-size: .74rem; color: #9DB8D0; }
 
-.featured-title-row {
-  display: flex;
-  align-items: flex-start;
-  justify-content: space-between;
-  gap: 1rem;
-  margin-bottom: .8rem;
-}
+/* The row is not a box of its own: its two children place themselves on the
+   grid above, so the CTA can move onto the image without being duplicated. */
+.featured-title-row { display: contents; }
 .featured-title-row h2 {
+  grid-row: 2;
+  grid-column: 1;
   font-size: clamp(1rem, 1.35vw, 1.2rem);
   font-weight: 700;
   color: #fff;
@@ -456,69 +465,125 @@ nav.main-nav ul.dropdown-menu a.active {
   line-height: 1.32;
 }
 .featured-title-row .cta {
-  flex: 0 0 auto;
+  grid-row: 3;
+  grid-column: 1;
+  align-self: end;
+  justify-self: end;
+  z-index: 4;
+  margin: 0 .85rem .85rem 0;
   display: inline-flex;
   align-items: center;
   gap: .35rem;
-  font-size: .78rem;
+  font-size: .76rem;
   font-weight: 700;
   color: #fff !important;
-  background: var(--blue);
-  padding: .42rem .75rem;
+  background: rgba(10, 32, 58, .62);
+  border: 1px solid rgba(255, 255, 255, .3);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  padding: .45rem .8rem;
   border-radius: var(--r-sm);
   text-decoration: none !important;
   white-space: nowrap;
+  transition: background .18s ease, border-color .18s ease;
 }
-.featured-title-row .cta:hover { background: var(--blue-600); }
+.featured-title-row .cta:hover {
+  background: rgba(20, 55, 95, .85);
+  border-color: rgba(255, 255, 255, .5);
+}
 .featured-title-row .cta svg { width: 14px; height: 14px; }
 
-/* Journal figures are usually tall multi-panel plates, so they are fitted
-   whole rather than cropped — a centre-crop of a portrait figure shows a
-   meaningless slice. The pale backing matches typical figure whites. */
-/* A shallow band so the hero never eats a whole screen. The image fills it
-   and is anchored to the top, because journal plates are tall multi-panel
-   figures whose first row reads best — fitting one whole into a band this
-   shallow would shrink it to a sliver. It is a visual cue here; the key
-   numbers below carry the substance and the paper carries the full figure. */
+/* A fixed band rather than a ratio, so the card can never push the hero past
+   a screen however wide the deck gets. The image is anchored to the top:
+   journal plates are tall multi-panel figures whose first row reads best, and
+   the key numbers over it carry the substance. */
 .featured-figure {
-  margin: 0 0 .7rem;
+  grid-row: 3;
+  grid-column: 1;
+  position: relative;
+  height: clamp(190px, 25vw, 290px);
+  margin: 0;
   border-radius: var(--r-sm);
   overflow: hidden;
   background: #F2F7FB;
-  aspect-ratio: 16 / 5;
 }
 .featured-figure img {
+  position: absolute;
+  inset: 0;
   display: block;
   width: 100%; height: 100%;
   object-fit: cover;
   object-position: center top;
 }
 .featured-figure .fig-fallback {
+  position: absolute;
+  inset: 0;
   display: none;
-  width: 100%; height: 100%;
   align-items: center;
   justify-content: center;
   text-align: center;
   padding: 1rem;
   font-size: .8rem;
-  color: #9DB8D0;
+  color: #6B8AA6;
 }
 
-/* Four key numbers under each featured study. */
+/* Four key numbers per study, laid over the foot of the image. Two show at
+   rest under a soft scrim; hovering the image or the strip grows the panel up
+   the image and fades the other two in. All four are always in the DOM, so
+   nothing is hidden from a reader who cannot hover — see the coarse-pointer
+   rule below, which simply shows them all. */
 .stat-grid {
+  grid-row: 3;
+  grid-column: 1;
+  align-self: end;
+  justify-self: stretch;
+  z-index: 3;
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: .45rem;
+  gap: .35rem 1rem;
+  margin: 0;
+  padding: .85rem 7.5rem .8rem .9rem;   /* right side clears the CTA */
+  max-height: 70px;
+  overflow: hidden;
+  border-radius: 0 0 var(--r-sm) var(--r-sm);
+  background: linear-gradient(180deg,
+    rgba(5, 18, 36, 0) 0%, rgba(5, 18, 36, .52) 50%, rgba(4, 15, 30, .9) 100%);
+  cursor: pointer;
+  transition: max-height .34s cubic-bezier(.22, .68, .28, 1),
+              padding-top .34s ease,
+              background .34s ease;
 }
 .stat-grid .stat {
   display: flex;
   align-items: flex-start;
   gap: .45rem;
-  background: rgba(255, 255, 255, .055);
-  border: 1px solid rgba(126, 173, 214, .16);
-  border-radius: var(--r-sm);
-  padding: .42rem .55rem;
 }
+.stat-grid .stat:nth-child(n+3) {
+  opacity: 0;
+  transform: translateY(8px);
+  transition: opacity .22s ease, transform .22s ease;
+}
+
+.featured-figure:hover ~ .stat-grid,
+.featured-figure:focus-within ~ .stat-grid,
+.stat-grid:hover,
+.stat-grid:focus-within {
+  max-height: 260px;
+  padding-top: 1.25rem;
+  background: linear-gradient(180deg,
+    rgba(4, 14, 28, .28) 0%, rgba(4, 14, 28, .76) 32%, rgba(3, 12, 25, .95) 100%);
+}
+.featured-figure:hover ~ .stat-grid .stat:nth-child(n+3),
+.featured-figure:focus-within ~ .stat-grid .stat:nth-child(n+3),
+.stat-grid:hover .stat:nth-child(n+3),
+.stat-grid:focus-within .stat:nth-child(n+3) {
+  opacity: 1;
+  transform: none;
+}
+
+/* The coarse-pointer fallback for this strip lives at the end of section 11:
+   it has to outrank the max-width overrides there, which would otherwise
+   re-clamp it on exactly the devices that cannot hover. */
 .stat-grid .stat svg {
   flex: 0 0 auto;
   width: 19px; height: 19px;
@@ -535,9 +600,9 @@ nav.main-nav ul.dropdown-menu a.active {
 }
 .stat-grid .stat span {
   display: block;
-  font-size: .72rem;
-  color: #A9C2D8;
-  line-height: 1.35;
+  font-size: .7rem;
+  color: #C3D7E8;
+  line-height: 1.3;
   margin-top: 2px;
 }
 
@@ -1589,8 +1654,19 @@ main.banded-main > section { margin-bottom: 0; }
   }
   nav.main-nav ul.dropdown-menu a { padding: .6rem .2rem; }
 
-  .stat-grid { grid-template-columns: minmax(0, 1fr); }
-  .featured-title-row { flex-direction: column; align-items: flex-start; gap: .55rem; }
+  .stat-grid {
+    grid-template-columns: minmax(0, 1fr);
+    padding: .75rem 1rem .7rem .9rem;
+    max-height: 56px;
+  }
+  .featured-figure:hover ~ .stat-grid,
+  .featured-figure:focus-within ~ .stat-grid,
+  .stat-grid:hover,
+  .stat-grid:focus-within { max-height: 290px; }
+  .featured-title-row .cta { margin: 0 .75rem .75rem 0; }
+  /* Taller here because a one-column strip of four is deep, and the image
+     should still be visible underneath it. */
+  .featured-figure { height: 330px; }
   .foot-grid { grid-template-columns: minmax(0, 1fr); gap: 1.4rem; }
   .lightbox-nav { width: 2.2rem; height: 2.2rem; }
   .lightbox-nav svg { width: 1.2rem; height: 1.2rem; }
@@ -1605,6 +1681,14 @@ main.banded-main > section { margin-bottom: 0; }
   .kinetic-line { min-height: 2.5em; }
   .tcards { grid-template-columns: minmax(0, 1fr); }
   .panels { grid-template-columns: minmax(0, 1fr); }
+}
+
+/* Featured card, coarse pointers: there is no hover to give, so show all four
+   key numbers rather than leave two of them unreachable. Last in the file on
+   purpose — see the note in section 4. */
+@media (hover: none), (pointer: coarse) {
+  .stat-grid { max-height: none !important; overflow: visible; }
+  .stat-grid .stat:nth-child(n+3) { opacity: 1; transform: none; }
 }
 
 @media (prefers-reduced-motion: reduce) {
