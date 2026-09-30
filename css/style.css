@@ -766,6 +766,32 @@ a.tcard:hover {
   color: #fff;
   background: linear-gradient(transparent, rgba(6, 26, 50, .85));
 }
+/* Overlaid step controls. They sit above the caption gradient, and stay
+   visible rather than hover-only so they are discoverable on touch. */
+.shot-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.3rem;
+  height: 2.3rem;
+  padding: 0;
+  border: none;
+  border-radius: 50%;
+  background: rgba(8, 38, 74, .5);
+  color: #fff;
+  cursor: pointer;
+  transition: background .16s ease;
+}
+.shot-arrow:hover,
+.shot-arrow:focus-visible { background: rgba(8, 38, 74, .82); }
+.shot-arrow svg { width: 1.15rem; height: 1.15rem; }
+.shot-prev { left: .6rem; }
+.shot-next { right: .6rem; }
+
 .shot-dots {
   display: flex;
   justify-content: center;

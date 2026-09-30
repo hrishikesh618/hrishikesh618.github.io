@@ -138,10 +138,15 @@
     var shots = document.querySelector(".shots");
     if (!shots) return;
 
-    var figures = Array.prototype.slice.call(shots.querySelectorAll("figure"));
+    /* Direct children only: the arrows live inside .shots too. */
+    var figures = Array.prototype.slice.call(shots.children).filter(function (node) {
+      return node.tagName === "FIGURE";
+    });
     if (figures.length < 2) return;
 
     var dotWrap = document.querySelector(".shot-dots");
+    var prev = shots.querySelector(".shot-prev");
+    var next = shots.querySelector(".shot-next");
     var current = 0;
     var timer = null;
     var AUTO_MS = 4200;
@@ -172,8 +177,15 @@
       timer = setInterval(function () { show(current + 1); }, AUTO_MS);
     }
 
+    function step(delta) { show(current + delta); restart(); }
+
+    if (prev) prev.addEventListener("click", function () { step(-1); });
+    if (next) next.addEventListener("click", function () { step(1); });
+
     shots.addEventListener("mouseenter", function () { if (timer) clearInterval(timer); });
     shots.addEventListener("mouseleave", restart);
+    shots.addEventListener("focusin", function () { if (timer) clearInterval(timer); });
+    shots.addEventListener("focusout", restart);
 
     show(0);
     restart();
