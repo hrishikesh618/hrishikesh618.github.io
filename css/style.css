@@ -177,6 +177,10 @@ main section > h2::after {
   color: var(--ink);
   font-weight: 700;
 }
+.site-title .affil .role {
+  color: var(--blue-600);
+  font-weight: 700;
+}
 
 .nav-toggle {
   display: none;
@@ -310,18 +314,8 @@ nav.main-nav ul.dropdown-menu a.active {
   align-items: center;
 }
 
-/* Kinetic headline — eyebrow above, rotating phrase below. */
+/* Kinetic headline — a single rotating phrase. */
 .kinetic { margin: 0; }
-.kinetic-eyebrow {
-  display: block;
-  font-family: var(--font);
-  font-size: clamp(13px, 1.15vw, 17px);
-  font-weight: 700;
-  letter-spacing: .18em;
-  text-transform: uppercase;
-  color: #9FC4E4;
-  margin-bottom: .5rem;
-}
 .kinetic-line {
   display: block;
   font-family: var(--font-display);
@@ -346,20 +340,8 @@ nav.main-nav ul.dropdown-menu a.active {
   .kinetic-line .cursor { animation: none; }
 }
 
-.hero-name {
-  font-family: var(--font-display);
-  font-size: clamp(1.05rem, 1.5vw, 1.3rem);
-  font-weight: 700;
-  color: #fff;
-  margin: 1.2rem 0 .3rem;
-}
-.hero-position {
-  font-size: .95rem;
-  color: #C3D7E8;
-  margin: 0 0 1.1rem;
-  max-width: 34rem;
-}
 .hero-rule {
+  margin-top: 1.4rem;
   width: 56px; height: 3px;
   background: var(--blue);
   border: none;
