@@ -1065,6 +1065,53 @@ a.tcard:hover {
 .pub-badge.cite { background: var(--amber-soft); color: var(--amber); border-color: #EBD9BF; }
 
 /* --------------------------------------------------------------------------
+   8b  Conference venue map (Leaflet)
+   -------------------------------------------------------------------------- */
+
+#confMap {
+  height: 460px;
+  border-radius: var(--r);
+  overflow: hidden;
+  border: 1px solid var(--line);
+  background: var(--panel);
+  /* Keep the map under the sticky header and any open nav dropdown. */
+  z-index: 0;
+}
+
+.map-note {
+  margin: .75rem 0 0;
+  font-size: .85rem;
+  color: var(--muted);
+  line-height: 1.55;
+}
+
+/* Leaflet resets so the map inherits the site's type rather than its own. */
+.leaflet-container { font: inherit; }
+.leaflet-popup-content { font-size: .85rem; line-height: 1.5; color: var(--body); }
+.leaflet-popup-content b { color: var(--ink); }
+
+/* Our own English place labels beside each circle. Leaflet gives divIcons a
+   white box and border by default, which has to be cleared. */
+.conf-label {
+  background: none !important;
+  border: none !important;
+  white-space: nowrap;
+  pointer-events: none;
+}
+.conf-label span {
+  font-family: var(--font);
+  font-size: .74rem;
+  font-weight: 700;
+  color: var(--ink);
+  text-shadow:
+    0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff, 0 0 3px #fff;
+}
+
+@media (max-width: 820px) {
+  #confMap { height: 360px; }
+}
+
+/* --------------------------------------------------------------------------
    9  Gallery and lightbox
    -------------------------------------------------------------------------- */
 
