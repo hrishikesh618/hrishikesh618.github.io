@@ -672,9 +672,13 @@ a.tcard:hover {
 
 .panels {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  /* 440px rather than 320: the updates list needs a fixed amount of vertical
+     space whatever the width, so in a narrow two-column layout the photo has
+     to stretch to match it and ends up cropped to a portrait sliver. Stacking
+     a little earlier keeps the photo at its own ratio instead. */
+  grid-template-columns: repeat(auto-fit, minmax(440px, 1fr));
   gap: 1.2rem;
-  align-items: start;
+  /* Default stretch: both panels share one height per row. */
 }
 
 .panel {
@@ -683,6 +687,10 @@ a.tcard:hover {
   border-radius: var(--r);
   box-shadow: var(--shadow-sm);
   overflow: hidden;
+  /* A column so the body, or the photo, can absorb the leftover height
+     when the neighbouring panel is the taller of the two. */
+  display: flex;
+  flex-direction: column;
 }
 .panel-head {
   display: flex;
@@ -701,11 +709,22 @@ a.tcard:hover {
 .panel-head h2::after { display: none; }
 .panel-head a { font-size: .82rem; font-weight: 600; }
 
-.panel-body { padding: .35rem 1.05rem 1rem; }
+.panel-body { padding: .35rem 1.05rem 1rem; flex: 1 1 auto; }
 
-/* Recent updates list */
+/* Spreads a short list down the full card instead of leaving the slack at
+   the bottom, so a panel matched in height to a taller neighbour still looks
+   filled rather than cut off. */
+.panel-body-fill {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Recent updates list. The vertical rhythm here is deliberately tight: all
+   five entries have to fit inside the height of the photo panel beside them,
+   so the band reads as two cards of one height with nothing to scroll. */
 .update {
-  padding: .8rem 0;
+  padding: .5rem 0;
   border-bottom: 1px solid var(--line-soft);
 }
 .update:last-child { border-bottom: none; }
@@ -716,18 +735,18 @@ a.tcard:hover {
   letter-spacing: .13em;
   text-transform: uppercase;
   color: var(--blue-600);
-  margin-bottom: .3rem;
+  margin-bottom: .18rem;
 }
 .update .u-kicker.is-award { color: var(--amber); }
 .update h3 {
   font-family: var(--font);
-  font-size: .9rem;
+  font-size: .875rem;
   font-weight: 600;
   color: var(--ink);
-  margin: 0 0 .2rem;
-  line-height: 1.45;
+  margin: 0 0 .12rem;
+  line-height: 1.35;
 }
-.update .u-date { font-size: .76rem; color: var(--muted); margin: 0; }
+.update .u-date { font-size: .74rem; line-height: 1.4; color: var(--muted); margin: 0; }
 .update .u-new {
   display: inline-block;
   font-size: .6rem;
@@ -745,7 +764,10 @@ a.tcard:hover {
 /* Photo carousel */
 .shots {
   position: relative;
+  /* The ratio is the starting height; flex-grow lets the photo take up any
+     height left over when the updates panel beside it turns out taller. */
   aspect-ratio: 4 / 3;
+  flex: 1 1 auto;
   background: var(--panel);
   overflow: hidden;
 }
