@@ -42,9 +42,11 @@
   var BLUE = "#2E9BE8";
   var LABEL_FROM = 3;
 
-  /* Area-proportional, so a venue with three visits does not swamp one. */
+  /* Area-proportional, so a venue with three visits does not swamp one.
+     Sized generously because at world zoom the markers are the only thing
+     on an otherwise pale basemap. */
   function radius(total) {
-    return 6 + Math.sqrt(total) * 4.2;
+    return 8 + Math.sqrt(total) * 5;
   }
 
   function plural(n, word) {
@@ -74,16 +76,22 @@
     var labels = L.layerGroup();
     var markers = [];
 
-    VENUES.forEach(function (venue) {
+    /* Draw the busiest cities first so smaller circles land on top of them.
+       Tokyo sits inside Chiba at world zoom, and New Delhi inside Roorkee;
+       this ordering keeps both of each pair readable as nested rings until
+       the reader zooms in far enough to separate them. */
+    VENUES.slice().sort(function (a, b) {
+      return (b.first + b.co) - (a.first + a.co);
+    }).forEach(function (venue) {
       var total = venue.first + venue.co;
       if (!total) return;
 
       var marker = L.circleMarker([venue.lat, venue.lng], {
         radius: radius(total),
         color: NAVY,
-        weight: 1.4,
+        weight: 2,
         fillColor: BLUE,
-        fillOpacity: 0.55
+        fillOpacity: 0.82
       }).addTo(map);
 
       var lines = [];
@@ -92,8 +100,8 @@
 
       marker.bindPopup("<b>" + venue.name + "</b><br>" + lines.join("<br>"));
       marker.bindTooltip(venue.name + " · " + total, { direction: "top", offset: [0, -4] });
-      marker.on("mouseover", function () { this.setStyle({ fillOpacity: 0.85 }); });
-      marker.on("mouseout", function () { this.setStyle({ fillOpacity: 0.55 }); });
+      marker.on("mouseover", function () { this.setStyle({ fillOpacity: 1 }); });
+      marker.on("mouseout", function () { this.setStyle({ fillOpacity: 0.82 }); });
 
       L.marker([venue.lat, venue.lng], {
         interactive: false,

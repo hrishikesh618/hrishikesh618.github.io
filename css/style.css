@@ -287,7 +287,7 @@ nav.main-nav ul.dropdown-menu a.active {
    background-image attribute, which would override this gradient layer. */
 .hero-photo {
   position: relative;
-  min-height: 560px;
+  min-height: 440px;
   display: flex;
   align-items: center;
   background-image:
@@ -302,7 +302,7 @@ nav.main-nav ul.dropdown-menu a.active {
 .hero-photo-inner {
   max-width: var(--wrap);
   margin: 0 auto;
-  padding: 3.4rem var(--gutter);
+  padding: 2rem var(--gutter);
   width: 100%;
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
@@ -325,7 +325,7 @@ nav.main-nav ul.dropdown-menu a.active {
 .kinetic-line {
   display: block;
   font-family: var(--font-display);
-  font-size: clamp(32px, 4.6vw, 64px);
+  font-size: clamp(30px, 3.9vw, 52px);
   font-weight: 800;
   letter-spacing: -.02em;
   line-height: 1.06;
@@ -493,17 +493,23 @@ nav.main-nav ul.dropdown-menu a.active {
 /* Journal figures are usually tall multi-panel plates, so they are fitted
    whole rather than cropped — a centre-crop of a portrait figure shows a
    meaningless slice. The pale backing matches typical figure whites. */
+/* A shallow band so the hero never eats a whole screen. The image fills it
+   and is anchored to the top, because journal plates are tall multi-panel
+   figures whose first row reads best — fitting one whole into a band this
+   shallow would shrink it to a sliver. It is a visual cue here; the key
+   numbers below carry the substance and the paper carries the full figure. */
 .featured-figure {
-  margin: 0 0 .85rem;
+  margin: 0 0 .7rem;
   border-radius: var(--r-sm);
   overflow: hidden;
   background: #F2F7FB;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 5;
 }
 .featured-figure img {
   display: block;
   width: 100%; height: 100%;
-  object-fit: contain;
+  object-fit: cover;
+  object-position: center top;
 }
 .featured-figure .fig-fallback {
   display: none;
@@ -520,16 +526,16 @@ nav.main-nav ul.dropdown-menu a.active {
 .stat-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: .55rem;
+  gap: .45rem;
 }
 .stat-grid .stat {
   display: flex;
   align-items: flex-start;
-  gap: .5rem;
+  gap: .45rem;
   background: rgba(255, 255, 255, .055);
   border: 1px solid rgba(126, 173, 214, .16);
   border-radius: var(--r-sm);
-  padding: .55rem .6rem;
+  padding: .42rem .55rem;
 }
 .stat-grid .stat svg {
   flex: 0 0 auto;
