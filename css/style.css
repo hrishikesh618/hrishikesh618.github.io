@@ -1028,6 +1028,212 @@ a.tcard:hover {
 .featured-more a { font-weight: 700; }
 
 /* --------------------------------------------------------------------------
+   7b  Profile page
+
+   The About page runs as full-bleed bands like the home page rather than one
+   measured column, so the portrait, the bio and the timelines each get their
+   own strip and alternate tints can separate them.
+   -------------------------------------------------------------------------- */
+
+main.banded-main { max-width: none; padding: 0; }
+main.banded-main > section { margin-bottom: 0; }
+
+.section { padding: 2.9rem 0; }
+.section.tint { background: var(--panel); border-block: 1px solid var(--line); }
+
+.section-head { margin-bottom: 1.7rem; }
+.section-head h2 {
+  position: relative;
+  padding-bottom: .55rem;
+  margin: 0;
+}
+.section-head h2::after {
+  content: "";
+  position: absolute;
+  left: 0; bottom: 0;
+  width: 54px; height: 3px;
+  background: var(--blue);
+  border-radius: 2px;
+}
+.section-head p {
+  margin: .8rem 0 0;
+  max-width: 62ch;
+  font-size: .9rem;
+  color: var(--muted);
+}
+
+.crumb { font-size: .8rem; color: var(--blue-300); margin: 0 0 .5rem; }
+.crumb a { color: var(--blue-300); }
+.crumb a:hover { color: #fff; }
+
+/* Portrait column beside the bio. Stacks below 880px, where a 260px column
+   would leave the bio too narrow to read. */
+.pi-layout { display: grid; gap: 2rem; }
+@media (min-width: 880px) {
+  .pi-layout { grid-template-columns: 260px minmax(0, 1fr); gap: 2.9rem; }
+}
+.pi-photo {
+  aspect-ratio: 3 / 4;
+  margin: 0;
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  background: var(--panel);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+.pi-photo img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+.pi-meta { margin-top: 1.1rem; }
+.social-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .55rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.social-links a {
+  display: grid;
+  place-items: center;
+  width: 42px; height: 42px;
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r-sm);
+  color: var(--navy-800);
+  transition: transform .18s ease, border-color .18s ease, box-shadow .18s ease, color .18s ease;
+}
+.social-links a:hover {
+  transform: translateY(-2px);
+  border-color: var(--blue);
+  color: var(--blue-600);
+  box-shadow: var(--shadow);
+  text-decoration: none;
+}
+.social-links svg { width: 20px; height: 20px; fill: currentColor; display: block; }
+
+.pi-contact {
+  list-style: none;
+  margin: 1.1rem 0 0;
+  padding: 0;
+  font-size: .8rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+.pi-contact li { word-break: break-word; }
+
+.pi-name { font-size: clamp(1.5rem, 2.6vw, 1.95rem); margin: 0; }
+.pi-role {
+  font-size: .72rem;
+  font-weight: 800;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+  color: var(--blue-600);
+  margin: 0 0 .5rem;
+}
+/* No measure cap: the bio fills its column the way the reference layout
+   does, so the text block and the portrait finish together. */
+.short-bio { margin-top: .9rem; }
+.short-bio p { margin-bottom: .95rem; }
+
+/* CV row — a PDF that opens in a new tab should look like something you
+   press, not like a sentence with an underline. */
+.cv-row {
+  display: flex;
+  align-items: center;
+  gap: .9rem;
+  flex-wrap: wrap;
+  margin-top: 1.4rem;
+}
+.cv-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: .55rem;
+  padding: .65rem 1.05rem;
+  border-radius: var(--r-sm);
+  background: var(--blue-600);
+  color: #fff !important;
+  font-size: .87rem;
+  font-weight: 600;
+  line-height: 1;
+  box-shadow: 0 8px 18px -10px rgba(11, 45, 95, .9);
+  transition: transform .16s ease, background .16s ease, box-shadow .16s ease;
+}
+.cv-btn:hover {
+  transform: translateY(-2px);
+  background: var(--navy-700);
+  text-decoration: none;
+  box-shadow: 0 12px 22px -12px rgba(11, 45, 95, 1);
+}
+.cv-btn svg { width: 17px; height: 17px; flex: none; }
+.cv-btn .cv-meta {
+  padding-left: .6rem;
+  border-left: 1px solid rgba(255, 255, 255, .35);
+  font-size: .68rem;
+  letter-spacing: .05em;
+  text-transform: uppercase;
+  opacity: .9;
+}
+.cv-alt { font-size: .84rem; }
+
+/* Dated timeline — education, awards, service */
+.timeline {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-left: 2px solid var(--line);
+}
+.timeline li { position: relative; padding: 0 0 1.55rem 1.6rem; }
+.timeline li:last-child { padding-bottom: 0; }
+.timeline li::before {
+  content: "";
+  position: absolute;
+  left: -7px; top: 5px;
+  width: 12px; height: 12px;
+  border-radius: 50%;
+  background: var(--blue-600);
+  border: 2px solid var(--white);
+  box-shadow: 0 0 0 2px var(--line);
+}
+.timeline .when {
+  font-size: .68rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--blue-600);
+}
+.timeline h3 { font-size: 1rem; font-weight: 600; margin: .28rem 0 0; }
+.timeline p {
+  font-size: .85rem;
+  color: var(--muted);
+  margin: .3rem 0 0;
+  line-height: 1.55;
+  max-width: 100ch;   /* a full-width line of 13px text is hard to track back */
+}
+
+/* Two- and three-column lists (expertise, service) */
+.col-lists {
+  display: grid;
+  gap: 1.6rem 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(290px, 1fr));
+}
+.col-lists h3 {
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--blue-600);
+  margin: 0 0 .7rem;
+}
+.col-lists ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: .88rem;
+  line-height: 1.75;
+}
+.col-lists li + li { margin-top: .45rem; }
+
+/* --------------------------------------------------------------------------
    8  Publications
    -------------------------------------------------------------------------- */
 

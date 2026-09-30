@@ -7,12 +7,13 @@ Plain HTML/CSS/JS, no build step. Deployed via GitHub Pages directly from this r
 ## Structure
 
 - `index.html` — Home
-- `about.html` — About, including a "Research themes" section (id `#research-themes`)
+- `about.html` — About: portrait and biography, education and experience (id `#journey`),
+  research interests, "Research themes" (id `#research-themes`), awards, teaching and
+  service, technical expertise
 - `publications.html` — Publications (nav: Research › Publications)
 - `conferences.html` — Conferences (nav: Research › Conferences)
 - `pmrf-progress.html` — PMRF Progress (nav: Research › PMRF Progress)
 - `workshops.html` — Workshops and Training
-- `academic-journey.html` — Academic Journey
 - `data-tools.html` — Data and Tools (public datasets and tools)
 - `gallery.html` — Gallery (Photos and Videos)
 - `contact.html` — Contact
@@ -25,6 +26,11 @@ rather than a page of its own. The former `research.html` was merged into
 `publications.html` as a "Research themes" section early on, then moved
 again to `about.html` — About now covers who Hrishikesh is and what he
 works on, while `publications.html` stays focused on the outputs.
+
+`academic-journey.html` was folded into `about.html` too, which is laid out
+like the CRaWL lab's Principal Investigator page: portrait and contact
+column beside the biography, then dated timelines for education, experience
+and awards. Links to the old page now point at `about.html#journey`.
 
 Gallery photos and videos aren't tracked in the repo (only placeholder
 `.gitkeep` files are) — see "Adding Gallery media" below.
