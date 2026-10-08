@@ -669,9 +669,13 @@ a.tcard:hover {
   text-decoration: none;
 }
 
+/* 4:3 to match the artwork, so nothing is cropped. The tint and the hairline
+   give the white-background illustrations an edge they would otherwise lack
+   against a white card. */
 .tcard-fig {
-  aspect-ratio: 16 / 10;
-  background: linear-gradient(135deg, var(--navy-800), var(--blue-600));
+  aspect-ratio: 4 / 3;
+  background: var(--panel);
+  border-bottom: 1px solid var(--line);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -690,7 +694,7 @@ a.tcard:hover {
   font-size: .985rem;
   font-weight: 700;
   color: var(--ink);
-  margin: 0 0 .35rem;
+  margin: 0 0 .9rem;
   line-height: 1.32;
 }
 .tcard-body p {
@@ -1256,6 +1260,31 @@ main.banded-main > section { margin-bottom: 0; }
   margin: .3rem 0 0;
   line-height: 1.55;
   max-width: 100ch;   /* a full-width line of 13px text is hard to track back */
+}
+
+/* Research themes: each theme is a heading and a lead sentence, followed by
+   the study records that sit under it. */
+#research-themes > .wrap > h3 {
+  font-size: 1.14rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 2.2rem 0 .35rem;
+  padding-left: .7rem;
+  border-left: 3px solid var(--blue);
+}
+#research-themes > .wrap > h3:first-of-type { margin-top: 0; }
+.theme-lead {
+  font-size: .9rem;
+  color: var(--muted);
+  max-width: 86ch;
+  margin: 0 0 1rem;
+  padding-left: .7rem;
+}
+.card h4 {
+  font-size: .95rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 0 0 .55rem;
 }
 
 /* Two- and three-column lists (expertise, service) */
