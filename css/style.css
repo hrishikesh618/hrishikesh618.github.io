@@ -1262,24 +1262,86 @@ main.banded-main > section { margin-bottom: 0; }
   max-width: 100ch;   /* a full-width line of 13px text is hard to track back */
 }
 
-/* Research themes: each theme is a heading and a lead sentence, followed by
-   the study records that sit under it. */
-#research-themes > .wrap > h3 {
-  font-size: 1.14rem;
+/* Each section below the biography is one card, two to a row, so the page
+   can be taken in without a long scroll. Cards whose own contents are
+   already columned span the full width. */
+.about-cards {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+  align-items: start;
+}
+.acard {
+  background: var(--white);
+  border: 1px solid var(--line);
+  border-radius: var(--r);
+  box-shadow: var(--shadow-sm);
+  padding: 1.3rem 1.45rem 1.45rem;
+  min-width: 0;
+}
+.acard.wide { grid-column: 1 / -1; }
+.acard > h2 {
+  font-size: 1.12rem;
   font-weight: 700;
   color: var(--ink);
-  margin: 2.2rem 0 .35rem;
-  padding-left: .7rem;
+  margin: 0 0 1.05rem;
+  padding: 0 0 0 .7rem;
   border-left: 3px solid var(--blue);
 }
-#research-themes > .wrap > h3:first-of-type { margin-top: 0; }
-.theme-lead {
+.acard > h2::after { display: none; }
+.acard-lede {
   font-size: .9rem;
   color: var(--muted);
   max-width: 86ch;
-  margin: 0 0 1rem;
-  padding-left: .7rem;
+  margin: -.35rem 0 1.3rem;
 }
+
+/* Research themes: each theme is a heading and a lead sentence, followed by
+   the study records that sit under it. */
+/* Columns rather than a grid: the five strands are very uneven in length,
+   and grid rows would leave the short ones padding out the tall ones.
+   Columns pack them, and break-inside keeps each strand whole. */
+.theme-groups {
+  columns: 2;
+  column-gap: 1.9rem;
+}
+.theme-block {
+  break-inside: avoid;
+  -webkit-column-break-inside: avoid;
+  margin-bottom: 1.7rem;
+}
+.theme-block > h3 {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: var(--ink);
+  margin: 1.9rem 0 .3rem;
+  padding-left: .65rem;
+  border-left: 3px solid var(--blue-300);
+}
+.theme-block > h3:first-of-type { margin-top: 0; }
+.theme-lead {
+  font-size: .88rem;
+  color: var(--muted);
+  max-width: 86ch;
+  margin: 0 0 .9rem;
+  padding-left: .65rem;
+}
+
+/* Technical expertise: four labelled groups of chips inside the one card. */
+.skill-groups {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1.4rem 1.6rem;
+}
+.skill-groups h3 {
+  font-size: .78rem;
+  font-weight: 800;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--blue-600);
+  margin: 0 0 .6rem;
+}
+.skill-groups .keyword-pills { margin-top: 0; }
 .card h4 {
   font-size: .95rem;
   font-weight: 700;
@@ -1650,6 +1712,17 @@ main.banded-main > section { margin-bottom: 0; }
   .hero-photo { min-height: auto; }
   .featured-deck { margin-top: 1.6rem; }
   .foot-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 1040px) {
+  .about-cards { grid-template-columns: minmax(0, 1fr); }
+  .theme-groups { columns: 1; }
+  .skill-groups { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+@media (max-width: 560px) {
+  .skill-groups { grid-template-columns: minmax(0, 1fr); }
+  .acard { padding: 1.1rem 1.1rem 1.2rem; }
 }
 
 @media (max-width: 860px) {
