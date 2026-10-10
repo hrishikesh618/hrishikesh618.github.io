@@ -1271,7 +1271,10 @@ main.banded-main > section { margin-bottom: 0; }
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 1.2rem;
-  align-items: start;
+  /* Default stretch, so the two cards in a row end level and no gap opens
+     under the shorter one. Cards are paired by shape — the two dated
+     timelines together, the two short lists together — so the slack a
+     stretch has to absorb stays small. */
 }
 .acard {
   background: var(--white);
@@ -1280,7 +1283,24 @@ main.banded-main > section { margin-bottom: 0; }
   box-shadow: var(--shadow-sm);
   padding: 1.3rem 1.45rem 1.45rem;
   min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
+
+/* The body of a card takes the leftover height, and a dated list spreads its
+   entries down it rather than leaving the slack at the bottom. */
+.acard > .timeline,
+.acard > .lang-list {
+  flex: 1 1 auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+.acard > .keyword-pills,
+.acard > .col-lists,
+.acard > .skill-groups,
+.acard > .theme-groups { flex: 1 1 auto; }
+.acard > .keyword-pills { align-content: flex-start; }
 .acard.wide { grid-column: 1 / -1; }
 .acard > h2 {
   font-size: 1.12rem;
