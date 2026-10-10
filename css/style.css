@@ -41,6 +41,8 @@
   --white: #fff;
   --amber: #B5761F;
   --amber-soft: #F6ECDD;
+  --saffron: #E9B949;
+  --saffron-soft: #FBF1D8;
 
   --wrap: 1400px;
   --gutter: clamp(18px, 3.4vw, 48px);
@@ -1286,7 +1288,9 @@ main.banded-main > section { margin-bottom: 0; }
   color: var(--ink);
   margin: 0 0 1.05rem;
   padding: 0 0 0 .7rem;
-  border-left: 3px solid var(--blue);
+  /* Saffron rather than blue: a warm note against an otherwise cool page,
+     carried only by the card headings so it stays an accent. */
+  border-left: 3px solid var(--saffron);
 }
 .acard > h2::after { display: none; }
 .acard-lede {
@@ -1310,6 +1314,38 @@ main.banded-main > section { margin-bottom: 0; }
   -webkit-column-break-inside: avoid;
   margin-bottom: 1.7rem;
 }
+
+/* One line per output, with its state as a leading chip, so a theme reads at
+   a glance instead of as four labelled paragraphs. */
+.theme-outputs {
+  list-style: none;
+  margin: 0;
+  padding: 0 0 0 .65rem;
+}
+.theme-outputs li {
+  font-size: .85rem;
+  line-height: 1.5;
+  color: var(--body);
+  padding: .4rem 0;
+  border-top: 1px solid var(--line-soft);
+}
+.theme-outputs li:first-child { border-top: none; }
+.t-tag {
+  display: inline-block;
+  font-size: .62rem;
+  font-weight: 800;
+  letter-spacing: .09em;
+  text-transform: uppercase;
+  color: var(--muted);
+  background: var(--panel);
+  border-radius: 999px;
+  padding: .12rem .5rem;
+  margin-right: .4rem;
+  vertical-align: 1px;
+  white-space: nowrap;
+}
+.t-tag.is-done { background: #E3F1FC; color: var(--blue-600); }
+.t-tag.is-live { background: var(--saffron-soft); color: #9A6E12; }
 .theme-block > h3 {
   font-size: 1.05rem;
   font-weight: 700;
@@ -1325,6 +1361,42 @@ main.banded-main > section { margin-bottom: 0; }
   max-width: 86ch;
   margin: 0 0 .9rem;
   padding-left: .65rem;
+}
+
+/* Entry lists: a bold line and a quieter detail line underneath. */
+.dated,
+.lang-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.dated > li,
+.lang-list > li {
+  padding: .45rem 0;
+  border-top: 1px solid var(--line-soft);
+}
+.dated > li:first-child,
+.lang-list > li:first-child { border-top: none; }
+.dated b,
+.lang-list b {
+  display: block;
+  font-size: .87rem;
+  font-weight: 600;
+  color: var(--ink);
+  line-height: 1.38;
+}
+.dated span,
+.lang-list span {
+  display: block;
+  font-size: .78rem;
+  color: var(--muted);
+  line-height: 1.45;
+  margin-top: .12rem;
+}
+.group-note {
+  font-size: .78rem;
+  color: var(--muted);
+  margin: -.35rem 0 .55rem;
 }
 
 /* Technical expertise: four labelled groups of chips inside the one card. */

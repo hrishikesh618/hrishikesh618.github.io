@@ -111,8 +111,7 @@
   </section>
 
   <!-- Everything below the biography: one card per section, two to a row.
-       Research themes and Technical expertise run full width because their
-       own contents are already columned. -->
+       Cards whose own contents are columned run the full width. -->
   <section class="section tint">
     <div class="wrap">
       <div class="about-cards">
@@ -134,12 +133,12 @@
             <li>
               <span class="when">2020 &ndash; 2022</span>
               <h3>M.Tech, Water Resource Development and Irrigation Engineering, NIT Raipur</h3>
-              <p>Silver Medalist for academic excellence. CGPA 8.5.</p>
+              <p>Department of Civil Engineering. Silver Medallist.</p>
             </li>
             <li>
               <span class="when">2015 &ndash; 2019</span>
               <h3>B.E., Civil Engineering, Shri Shankaracharya Technical Campus</h3>
-              <p>Chhattisgarh Swami Vivekanand Technical University. CGPA 7.8.</p>
+              <p>Chhattisgarh Swami Vivekanand Technical University.</p>
             </li>
             <li>
               <span class="when">2015</span>
@@ -153,130 +152,166 @@
         <article class="acard">
           <h2>Research interests</h2>
           <div class="keyword-pills">
-            <span class="pill">Large-scale flood-inundation modelling</span>
-            <span class="pill">Hydrodynamic flood-hazard assessment</span>
-            <span class="pill">Socio-hydrological flood-risk analysis</span>
-            <span class="pill">Compound pluvial&ndash;fluvial flooding</span>
-            <span class="pill">Hydroclimatic extremes</span>
-            <span class="pill">Reanalysis and gridded datasets</span>
-            <span class="pill">Socio-economic and physical vulnerability</span>
-            <span class="pill">Remote sensing and geospatial analysis</span>
-            <span class="pill">Extreme-value statistics</span>
-            <span class="pill">Copula modelling</span>
-            <span class="pill">Multi-criteria decision-making</span>
+            <span class="pill">Global and regional flood models</span>
+            <span class="pill">1D, 2D and coupled hydrodynamic modelling</span>
+            <span class="pill">Flood hazard and risk mapping</span>
+            <span class="pill">Socio-economic and infrastructure vulnerability</span>
+            <span class="pill">MCDM &mdash; Entropy weighting, TOPSIS</span>
+            <span class="pill">Hydrological modelling</span>
+            <span class="pill">Extreme-value analysis</span>
+            <span class="pill">Climate extremes and indices</span>
+            <span class="pill">Wet and dry extremes</span>
+            <span class="pill">Statistical downscaling</span>
+            <span class="pill">Drought and climatic hazard</span>
+            <span class="pill">Design rainfall for ungauged catchments</span>
+            <span class="pill">Design hyetographs and hydrographs</span>
+            <span class="pill">Geospatial and satellite-imagery analysis</span>
+            <span class="pill">Supervised LULC classification</span>
+            <span class="pill">Satellite-based floodplain mapping</span>
           </div>
         </article>
 
         <!-- Research themes -->
         <article class="acard wide" id="research-themes">
           <h2>Research themes</h2>
-          <p class="acard-lede">The five strands the work is organised into. Where a theme has already produced a paper, its full record &mdash; citation, impact factor, citation count and DOI &mdash; sits in the <a href="publications.html">Publications</a> list rather than being repeated here.</p>
+          <p class="acard-lede">The five strands the work is organised into. Full citations, impact factors and DOIs are on the <a href="publications.html">Publications</a> page.</p>
 
           <div class="theme-groups">
+
             <div class="theme-block">
-            <h3>Hydroclimatic Data Evaluation</h3>
-            <p class="theme-lead">Assessing the reliability of reanalysis, satellite and climate datasets for hydrological extremes and flood modelling across diverse river basins.</p>
-
-            <div class="card">
-              <h4>Ranking reanalysis precipitation across 25 Indian basins</h4>
-              <p><strong>Summary:</strong> Systematic evaluation of atmospheric reanalysis precipitation datasets to identify which are reliable enough for flood modelling across India&rsquo;s river basins.</p>
-              <p class="meta-line"><strong>Status:</strong> Published &mdash; Singh &amp; Mohanty (2025), <em>International Journal of Applied Earth Observation and Geoinformation</em>. Methods, metrics and DOI are on the <a href="publications.html">Publications</a> page.</p>
-            </div>
-
-            <div class="card">
-              <h4>Can ERA5 rainfall reproduce observed inundation? The Mahanadi case</h4>
-              <p><strong>Summary:</strong> A regional case study testing whether ERA5 reanalysis rainfall can reproduce observed flood inundation &mdash; the foundational study of the thesis.</p>
-              <p class="meta-line"><strong>Status:</strong> Published &mdash; Singh &amp; Mohanty (2023), <em>Environmental Monitoring and Assessment</em>. Methods, validation and DOI are on the <a href="publications.html">Publications</a> page.</p>
-            </div>
+              <h3>Hydroclimatic Data Evaluation</h3>
+              <p class="theme-lead">Assessing the reliability of reanalysis, satellite and climate datasets for hydrological extremes and flood modelling across diverse river basins.</p>
+              <ul class="theme-outputs">
+                <li><span class="t-tag is-done">Published</span> Multi-scale assessment and entropy&ndash;MCDM framework for reanalysis precipitation over Indian basins &mdash; <em>Int. J. Applied Earth Observation and Geoinformation</em>, 2025</li>
+                <li><span class="t-tag is-done">Published</span> Can atmospheric reanalysis reproduce flood inundation at regional scales? ERA5 over the Mahanadi &mdash; <em>Environmental Monitoring and Assessment</em>, 2023</li>
+              </ul>
             </div>
 
             <div class="theme-block">
-            <h3>Large-Scale Flood Hazard &amp; Risk Mapping</h3>
-            <p class="theme-lead">Developing hydrological and hydrodynamic modelling frameworks to simulate flood inundation, assess hazards and map flood risk across river basins and regions.</p>
-
-            <div class="card">
-              <h4>A nationwide flood-hazard model at 100&nbsp;m resolution</h4>
-              <p><strong>Summary:</strong> A 100 m-resolution hydrodynamic flood-hazard model covering 25 major Indian river basins.</p>
-              <p><strong>Methods:</strong> LISFLOOD-FP hydrodynamic simulation forced with the best-performing reanalysis rainfall, validated against the July 2023 North India flood event using MODIS-derived inundation extent.</p>
-              <p><strong>Output:</strong> Validation statistics &mdash; Hit Rate 0.81, False Alarm Ratio 0.41, Error Bias 2.06 &mdash; supporting a nationwide flood-hazard layer.</p>
-              <p class="meta-line"><strong>Status:</strong> Core component of ongoing PMRF doctoral research (see <a href="pmrf-progress.html">PMRF Progress</a>).</p>
-            </div>
-
-            <div class="card">
-              <h4>How basins respond to multi-day rainfall</h4>
-              <p><strong>Summary:</strong> Examines how multi-day rainfall events translate into differential flood resilience across Indian basins.</p>
-              <p><strong>Methods:</strong> Multi-day design-storm derivation combined with hydrodynamic simulation to compare basin responses to sustained rainfall.</p>
-              <p><strong>Output:</strong> A comparative view of basin-scale resilience to multi-day flood-generating storms.</p>
-              <p class="meta-line"><strong>Status:</strong> Manuscript in preparation for <em>Geophysical Research Letters</em> &mdash; not yet submitted.</p>
-            </div>
+              <h3>Large-Scale Flood Hazard &amp; Risk Mapping</h3>
+              <p class="theme-lead">Hydrological and hydrodynamic modelling frameworks to simulate inundation, assess hazard and map flood risk across river basins and regions.</p>
+              <ul class="theme-outputs">
+                <li><span class="t-tag is-done">Published</span> Performance of ERA5 in capturing pluvial and fluvial inundation &mdash; <em>Water Resources Management</em>, 2025</li>
+                <li><span class="t-tag is-live">Ongoing</span> Nationwide 100&nbsp;m hydrodynamic flood-hazard model over 25 CWC basins &mdash; the core of the <a href="pmrf-progress.html">PMRF research</a></li>
+                <li><span class="t-tag">In preparation</span> Multi-day design storms and differential basin flood response</li>
+              </ul>
             </div>
 
             <div class="theme-block">
-            <h3>Socioeconomic &amp; Infrastructure Vulnerability</h3>
-            <p class="theme-lead">Assessing socioeconomic and physical infrastructure vulnerability using geospatial indicators, multi-criteria decision analysis and integrated risk assessment frameworks.</p>
-
-            <div class="card">
-              <h4>District-level vulnerability and the national risk picture</h4>
-              <p><strong>Summary:</strong> District-level socio-economic and physical vulnerability scoring, combined with hazard to produce a composite national flood-risk picture.</p>
-              <p><strong>Methods:</strong> Shannon Entropy weighting and TOPSIS ranking applied to demographic, infrastructure, and physical exposure indicators across 680+ districts.</p>
-              <p><strong>Output:</strong> A district-level Flood Vulnerability Index feeding into a composite national flood-risk assessment.</p>
-              <p class="meta-line"><strong>Status:</strong> Methodology published as a book chapter (see <a href="publications.html">Publications</a>); national risk synthesis ongoing.</p>
-            </div>
+              <h3>Socioeconomic &amp; Infrastructure Vulnerability</h3>
+              <p class="theme-lead">Vulnerability assessment from geospatial indicators, multi-criteria decision analysis and integrated risk frameworks.</p>
+              <ul class="theme-outputs">
+                <li><span class="t-tag is-done">Published</span> Socioeconomic-cum-physical vulnerability to riverine floods &mdash; book chapter, Springer, 2025</li>
+                <li><span class="t-tag is-live">Ongoing</span> District-level Flood Vulnerability Index across 680+ districts, weighted by Shannon Entropy and ranked by TOPSIS</li>
+              </ul>
             </div>
 
             <div class="theme-block">
-            <h3>Urban &amp; Compound Flood Risk Assessment</h3>
-            <p class="theme-lead">Investigating pluvial&ndash;fluvial flood interactions and developing integrated risk indices to assess, compare and prioritise flood-prone cities.</p>
-
-            <div class="card">
-              <h4>TRIC &mdash; a tier-based compound risk index for 100 Smart Cities</h4>
-              <p><strong>Summary:</strong> A city-scale Tier-based Risk Index for Cities (TRIC) quantifying compound flood-risk disparities across India&rsquo;s 100 Smart Cities.</p>
-              <p><strong>Methods:</strong> A copula-based framework combining urban-scale hazard modelling with exposed-population and GDP data and a city-tier classification system.</p>
-              <p><strong>Output:</strong> 10.35 million people (7.64%) and US$147.48 billion in GDP (9.03%) identified in High + Very High compound-hazard zones; Surat, Ahmedabad, Chinchwad, Visakhapatnam, Kalyan and Guwahati identified as Tier-5 (highest-risk) cities, with 27 Tier-4 cities making up the rest of the national priority set.</p>
-              <p class="meta-line"><strong>Status:</strong> Manuscript under internal review (see <a href="publications.html">Under review / in preparation</a> on the Publications page).</p>
-            </div>
+              <h3>Urban &amp; Compound Flood Risk Assessment</h3>
+              <p class="theme-lead">Pluvial&ndash;fluvial flood interactions, and integrated indices to compare and prioritise flood-prone cities.</p>
+              <ul class="theme-outputs">
+                <li><span class="t-tag">Under review</span> TRIC &mdash; a tier-based risk index ranking India&rsquo;s 100 Smart Cities under compound extremes</li>
+                <li><span class="t-tag is-done">Published</span> Compound risks of floods and droughts over multi-hazard catchments &mdash; <em>Science of the Total Environment</em>, 2024 (co-author)</li>
+              </ul>
             </div>
 
             <div class="theme-block">
-            <h3>Open-Source Tools &amp; Computational Frameworks</h3>
-            <p class="theme-lead">Developing reproducible computational workflows and accessible tools for hydroclimatic data analysis, flood modelling, geospatial processing and risk assessment.</p>
+              <h3>Open-Source Tools &amp; Computational Frameworks</h3>
+              <p class="theme-lead">Reproducible workflows and accessible tools for hydroclimatic data analysis, flood modelling and geospatial processing.</p>
+              <ul class="theme-outputs">
+                <li><span class="t-tag is-live">Released</span> <a href="https://cdfuse.streamlit.app" target="_blank" rel="noopener">CDFuse</a> &mdash; a browser-based app for comparing any two gridded NetCDF datasets (see <a href="data-tools.html">Data and Tools</a>)</li>
+                <li><span class="t-tag is-live">Ongoing</span> Nationwide simulation workflow on PARAM Ganga, a National Supercomputing Mission facility at IIT Roorkee</li>
+              </ul>
+            </div>
 
-            <div class="card">
-              <h4>CDFuse and the nationwide simulation workflow</h4>
-              <p><strong>Summary:</strong> A browser-based decision-support tool for comparing reanalysis and flood datasets interactively.</p>
-              <p><strong>Methods:</strong> Interactive NetCDF-based comparison tool; nationwide simulations run on PARAM Ganga, a National Supercomputing Mission facility at IIT Roorkee.</p>
-              <p><strong>Output:</strong> <a href="https://cdfuse.streamlit.app" target="_blank" rel="noopener">CDFuse</a>, released publicly &mdash; dataset selection, temporal processing, metric calculation and downloadable outputs for any pair of gridded NetCDF datasets.</p>
-              <p class="meta-line"><strong>Status:</strong> Live and in active development (see <a href="data-tools.html">Data and Tools</a>).</p>
-            </div>
-            </div>
           </div>
         </article>
 
-        <!-- Awards and fellowships -->
+        <!-- Teaching, mentorship and academic service -->
+        <article class="acard wide">
+          <h2>Teaching, mentorship and academic service</h2>
+          <div class="col-lists">
+
+            <div>
+              <h3>Teaching assistantships</h3>
+              <ul class="dated">
+                <li><b>Drinking Water, Sanitation and Sustainability</b><span>M.Tech (Drinking Water and Sanitation), WRD&amp;M, IIT Roorkee &middot; Autumn 2023, 2024, 2025</span></li>
+                <li><b>Design of Irrigation and Drainage Works</b><span>M.Tech (Irrigation Water Management), WRD&amp;M, IIT Roorkee &middot; Autumn 2023, 2024</span></li>
+                <li><b>River Engineering</b><span>M.Tech (WRD and Irrigation Water Management), WRD&amp;M, IIT Roorkee &middot; Spring 2024, 2025</span></li>
+                <li><b>Fluid Mechanics I and II</b><span>B.Tech (Civil Engineering), NIT Raipur &middot; 2021&ndash;2022</span></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>PMRF teaching &mdash; outside IIT Roorkee</h3>
+              <p class="group-note">154 contact hours across three institutions.</p>
+              <ul class="dated">
+                <li><b>Basic Statistics</b><span>B.Sc., Burman Group of Institutions, Roorkee &middot; 52 contact hours &middot; Aug&ndash;Nov 2025</span></li>
+                <li><b>Environmental Studies and Disaster Management</b><span>B.A. (Geography), Chaman Lal Mahavidyalaya, Landhaura, Haridwar &middot; 52 contact hours &middot; Jul 2024&ndash;Jan 2025</span></li>
+                <li><b>Construction Management, Accounts and Entrepreneurship Development</b><span>3rd-year Diploma (Civil), College of Engineering Roorkee &middot; class of 17 &middot; 50 contact hours &middot; Feb&ndash;May 2024</span></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>Training programmes and lectures</h3>
+              <ul class="dated">
+                <li><b>Hydrological and Flood Modelling &mdash; 3-day hands-on programme</b><span>Larsen &amp; Toubro, Chennai &middot; 16&ndash;18 Oct 2025. River morphology, hydrodynamic modelling, HEC-HMS, flood frequency analysis and hazard mapping, HEC-RAS 1D/2D, and urban flood modelling with SWMM.</span></li>
+                <li><b>Analysis and Processing of Precipitation Data</b><span>Hands-on lecture &middot; 2024</span></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>Mentorship and supervision</h3>
+              <ul class="dated">
+                <li><b>M.Tech dissertation</b><span>WRD&amp;M, IIT Roorkee &middot; 2024&ndash;2025</span></li>
+                <li><b>M.Tech dissertation</b><span>WRD&amp;M, IIT Roorkee &middot; 2023&ndash;2024</span></li>
+                <li><b>Six Bachelor&rsquo;s interns</b><span>GIS techniques in hydrology and urban flood modelling</span></li>
+              </ul>
+            </div>
+
+            <div>
+              <h3>Conferences and workshops</h3>
+              <ul class="dated">
+                <li><b>20 presentations, 11 as first author</b><span>AGU, EGU, JpGU&ndash;AGU, IAHS, WCRP Open Science Conference, ICRC-CORDEX, ICR6 and EWRA &mdash; see <a href="conferences.html">Conferences</a></span></li>
+                <li><b>Organising credits</b><span>ICCWE 2022 and RASTER 2023, IIT Roorkee; ICFWR 2024; Water, Built Environment and Emergency Preparedness 2024 &mdash; see <a href="workshops.html">Workshops and Training</a></span></li>
+              </ul>
+            </div>
+
+          </div>
+        </article>
+
+        <!-- Honours and awards -->
         <article class="acard">
-          <h2>Awards and fellowships</h2>
+          <h2>Honours and awards</h2>
           <ul class="timeline">
+            <li>
+              <span class="when">August 2026</span>
+              <h3>Felicitated by the Director and the Dean of Academic Affairs, IIT Roorkee</h3>
+              <p>At the Celebration of Publications in High-Impact Journals.</p>
+            </li>
+            <li>
+              <span class="when">May 2026</span>
+              <h3>Registration waiver, JpGU&ndash;AGU Joint Meeting 2026</h3>
+              <p>Chiba, Japan.</p>
+            </li>
             <li>
               <span class="when">2024</span>
               <h3>Prime Minister&rsquo;s Research Fellowship (PMRF), 11th cycle</h3>
             </li>
             <li>
               <span class="when">2023</span>
-              <h3>International travel grant, International Centre for Theoretical Physics (ICTP)</h3>
-              <p>To present at ICRC-CORDEX 2023, Trieste, Italy.</p>
+              <h3>Travel grant, International Centre for Theoretical Physics (ICTP)</h3>
+              <p>To present at ICRC-CORDEX 2023, 25&ndash;29 September 2023, Trieste, Italy.</p>
             </li>
             <li>
               <span class="when">2022</span>
-              <h3>Silver Medal for academic excellence</h3>
+              <h3>Silver medal for academic excellence</h3>
               <p>M.Tech in Water Resource Development and Irrigation Engineering, NIT Raipur.</p>
             </li>
             <li>
-              <span class="when">2020</span>
-              <h3>GATE qualified &mdash; score 473</h3>
-            </li>
-            <li>
-              <span class="when">2019</span>
-              <h3>GATE qualified &mdash; score 423</h3>
+              <span class="when">2019, 2020</span>
+              <h3>GATE qualified</h3>
+              <p>Scores 423 and 473.</p>
             </li>
             <li>
               <span class="when">Year to confirm</span>
@@ -286,34 +321,14 @@
           </ul>
         </article>
 
-        <!-- Teaching, mentoring and service -->
+        <!-- Languages -->
         <article class="acard">
-          <h2>Teaching, mentoring and academic service</h2>
-          <div class="col-lists">
-            <div>
-              <h3>Teaching and mentoring</h3>
-              <ul>
-                <li>Supervised 6 Bachelor&rsquo;s interns on GIS techniques in hydrology and urban flood modelling</li>
-                <li>Delivered a hands-on lecture on the analysis and processing of precipitation data</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Organising credits</h3>
-              <ul>
-                <li>International Conference on Climate and Weather-related Extremes, IIT Roorkee (2022)</li>
-                <li>RASTER 2023, IIT Roorkee</li>
-                <li>International Conference on Future of Water Resources (2024)</li>
-                <li>Water, Built Environment and Emergency Preparedness capacity-building programme (2024)</li>
-              </ul>
-            </div>
-            <div>
-              <h3>Conferences and workshops</h3>
-              <ul>
-                <li>20 presentations across 10 cities in 8 countries &mdash; see <a href="conferences.html">Conferences</a></li>
-                <li>Workshops attended, organised and supported &mdash; see <a href="workshops.html">Workshops and Training</a></li>
-              </ul>
-            </div>
-          </div>
+          <h2>Languages</h2>
+          <ul class="lang-list">
+            <li><b>Hindi</b><span>Native</span></li>
+            <li><b>English</b><span>C1 &mdash; reading, writing and listening</span></li>
+            <li><b>Sanskrit</b><span>Elementary (A2)</span></li>
+          </ul>
         </article>
 
         <!-- Technical expertise -->
@@ -332,9 +347,10 @@
             <div>
               <h3>Geospatial and remote sensing</h3>
               <div class="keyword-pills">
+                <span class="pill">Google Earth Engine</span>
+                <span class="pill">GDAL</span>
                 <span class="pill">ArcGIS</span>
                 <span class="pill">QGIS</span>
-                <span class="pill">Google Earth Engine</span>
               </div>
             </div>
             <div>
@@ -346,15 +362,18 @@
                 <span class="pill">NetCDF processing</span>
                 <span class="pill">Extreme-value analysis</span>
                 <span class="pill">Copula modelling</span>
-                <span class="pill">MCDM</span>
+                <span class="pill">MCDM &mdash; Entropy, TOPSIS</span>
+                <span class="pill">LLM-assisted development</span>
               </div>
             </div>
             <div>
               <h3>Computational infrastructure</h3>
               <div class="keyword-pills">
                 <span class="pill">PARAM Ganga (HPC)</span>
-                <span class="pill">National Supercomputing Mission</span>
-                <span class="pill">GPU-accelerated simulation</span>
+                <span class="pill">Parallel computing</span>
+                <span class="pill">Linux environments</span>
+                <span class="pill">Large-scale data processing</span>
+                <span class="pill">Workflow automation</span>
               </div>
             </div>
           </div>
