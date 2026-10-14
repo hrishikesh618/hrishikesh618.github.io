@@ -1263,6 +1263,14 @@ main.banded-main > section { margin-bottom: 0; }
   line-height: 1.55;
   max-width: 100ch;   /* a full-width line of 13px text is hard to track back */
 }
+/* The institution sits on its own line under the qualification, so the two
+   do not run together as one long comma-separated title. */
+.timeline p.where {
+  font-size: .88rem;
+  font-weight: 600;
+  color: var(--body);
+  margin-top: .15rem;
+}
 
 /* Each section below the biography is one card, two to a row, so the page
    can be taken in without a long scroll. Cards whose own contents are
